@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>dojo-esri-demo</title>
+		<link rel="stylesheet" href="libs/arcgis_js_api/esri/themes/light/main.css" />
+		<script type="text/javascript">
+			dojoConfig = {
+				parseOnLoad: true,
+				packages: [ {
+					name: 'widgets',
+					location: this.location.pathname.replace(/\/[^/]+$/, "") + "/widgets"
+				}, {
+					name: 'libs',
+					location: this.location.pathname.replace(/\/[^/]+$/, "") + "/libs"
+				}, {
+					name: 'components',
+					location: this.location.pathname.replace(/\/[^/]+$/, "") + "/components"
+				}
+				]
+			};
+		</script>
+    <script src="libs/arcgis_js_api/init.js"></script>
+    <style>
+      html,
+      body,
+      #viewDiv {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <script>
+      require([
+        "esri/widgets/Sketch",
+        "esri/Map",
+        "esri/layers/GraphicsLayer",
+        "esri/views/MapView",
+				"components/Demo/Widget"
+      ], function(Sketch, Map,Demo) {
+				
+				var d = new Demo();
+				//d.startup();
+				d.placeAt("viewDiv","first");
+				//document.getElementById("viewDiv").append(d.vm.$el);
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="viewDiv"></div>
+</html>
