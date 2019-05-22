@@ -1,0 +1,29 @@
+package ${root_package_name}.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import ${root_package_name}.entity.${entity_name};
+
+@Repository //dao层接口  
+@org.apache.ibatis.annotations.Mapper
+public interface ${entity_name}Mapper {
+
+#foreach ($function in $entity_functions)
+	public ${function.result} ${function.name}(${function.paramtype} ${function.paramname});
+	
+#end
+	public List<${entity_name}> findList(${entity_name} ${entity_name_low});
+	
+	public int insertSelective(${entity_name} ${entity_name_low});
+	
+	public int deleteByKey(String id);
+	
+	public int updateByKey(${entity_name} ${entity_name_low});
+	
+	public ${entity_name} findByKey(String id);
+	
+	public int deleteInBatch(List<String> ids);
+	
+}

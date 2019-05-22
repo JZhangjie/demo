@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+  <name>test</name>
+  <packagename>com.geo.test</packagename>
+  <packagepath>com/get/test</packagepath>
+  <packagetype>jar</packagetype>
+  <description>测试</description>
+  <dbtype>oracle</dbtype>
+  <entities>
+    <entity>
+      <name>Ledemo</name>
+      <namelow>ledemo</namelow>
+      <table>ledemotable</table>
+      <fields>
+        <field>
+          <name>id</name>
+          <nameupper>Id</nameupper>
+          <dbtype>varchar</dbtype>
+          <javatype>String</javatype>
+        </field>
+      </fields>
+      <functions></functions>
+    </entity>
+  </entities>
+</project>

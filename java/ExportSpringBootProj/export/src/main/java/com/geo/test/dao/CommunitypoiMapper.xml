@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geo.test.dao.CommunitypoiMapper">
+	<!-- 数据库和实体类映射 -->
+	<resultMap id="BaseResultMap"
+		type="com.geo.test.entity.Communitypoi">
+		<result column="id" jdbcType="VARCHAR" property="id" />
+		<result column="gps_x" jdbcType="NUMERIC" property="gps_x" />
+		<result column="gps_y" jdbcType="NUMERIC" property="gps_y" />
+		<result column="type" jdbcType="VARCHAR" property="type" />
+		<result column="distance" jdbcType="NUMERIC" property="distance" />
+		<result column="xqid" jdbcType="NUMERIC" property="xqid" />
+		<result column="projectid" jdbcType="VARCHAR" property="projectid" />
+	</resultMap>
+
+	<!-- 输出结构定义 -->
+	<sql id="Base_Column_List">id,gps_x,gps_y,type,distance,xqid,projectid</sql>
+
+	<!-- 查找列表 -->
+	<select id="findList" parameterType="com.geo.test.entity.Communitypoi" resultMap="BaseResultMap">
+		select 
+			<include refid="Base_Column_List"></include>
+		from community_poi_relative
+		<trim prefix="where" prefixOverrides="and|or">
+			<if test="id !='' and id != null">
+				and id = #{id,jdbcType=VARCHAR}
+			</if>
+			<if test="gps_x !='' and gps_x != null">
+				and gps_x = #{gps_x,jdbcType=NUMERIC}
+			</if>
+			<if test="gps_y !='' and gps_y != null">
+				and gps_y = #{gps_y,jdbcType=NUMERIC}
+			</if>
+			<if test="type !='' and type != null">
+				and type = #{type,jdbcType=VARCHAR}
+			</if>
+			<if test="distance !='' and distance != null">
+				and distance = #{distance,jdbcType=NUMERIC}
+			</if>
+			<if test="xqid !='' and xqid != null">
+				and xqid = #{xqid,jdbcType=NUMERIC}
+			</if>
+			<if test="projectid !='' and projectid != null">
+				and projectid = #{projectid,jdbcType=VARCHAR}
+			</if>
+			<if test="searchstr !='' and searchstr !=null" >
+				and name like CONCAT(CONCAT('%', #{searchstr}), '%')
+			</if>
+     	</trim>
+     	<if test="sort !='' and sort !=null" >
+				order by  ${sort}
+		</if>
+	</select>
+	
+	<!-- 新添加的sql -->
+	
+	<!-- 添加 -->
+	<insert id="insertSelective" parameterType="com.geo.test.entity.Communitypoi">
+		insert into community_poi_relative 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id !='' and id != null">
+				id,
+			</if>
+			<if test="gps_x !='' and gps_x != null">
+				gps_x,
+			</if>
+			<if test="gps_y !='' and gps_y != null">
+				gps_y,
+			</if>
+			<if test="type !='' and type != null">
+				type,
+			</if>
+			<if test="distance !='' and distance != null">
+				distance,
+			</if>
+			<if test="xqid !='' and xqid != null">
+				xqid,
+			</if>
+			<if test="projectid !='' and projectid != null">
+				projectid,
+			</if>
+     	</trim>
+		values
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id !='' and id != null">
+				#{id,jdbcType=VARCHAR}, 
+			</if>
+			<if test="gps_x !='' and gps_x != null">
+				#{gps_x,jdbcType=NUMERIC}, 
+			</if>
+			<if test="gps_y !='' and gps_y != null">
+				#{gps_y,jdbcType=NUMERIC}, 
+			</if>
+			<if test="type !='' and type != null">
+				#{type,jdbcType=VARCHAR}, 
+			</if>
+			<if test="distance !='' and distance != null">
+				#{distance,jdbcType=NUMERIC}, 
+			</if>
+			<if test="xqid !='' and xqid != null">
+				#{xqid,jdbcType=NUMERIC}, 
+			</if>
+			<if test="projectid !='' and projectid != null">
+				#{projectid,jdbcType=VARCHAR}, 
+			</if>
+		</trim>
+	</insert>
+	
+	<!-- 删除 -->
+	<delete id="deleteByKey" parameterType="String">
+		delete from community_poi_relative
+		where id = #{id,jdbcType=VARCHAR}
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="deleteInBatch" parameterType="java.util.List">
+		delete from community_poi_relative
+		where id in 
+		<foreach collection="list" item="id" open="(" close=")" separator="," >
+	         #{id,jdbcType=VARCHAR}
+	    </foreach>
+	</delete>
+
+	<!-- 修改 -->
+	<update id="updateByKey" parameterType="com.geo.test.entity.Communitypoi">
+		update community_poi_relative 
+		<trim prefix="set" suffixOverrides=",">
+				<if test="gps_x != '' and gps_x != null">
+					gps_x = #{gps_x,jdbcType=NUMERIC},
+				</if>
+				<if test="gps_y != '' and gps_y != null">
+					gps_y = #{gps_y,jdbcType=NUMERIC},
+				</if>
+				<if test="type != '' and type != null">
+					type = #{type,jdbcType=VARCHAR},
+				</if>
+				<if test="distance != '' and distance != null">
+					distance = #{distance,jdbcType=NUMERIC},
+				</if>
+				<if test="xqid != '' and xqid != null">
+					xqid = #{xqid,jdbcType=NUMERIC},
+				</if>
+				<if test="projectid != '' and projectid != null">
+					projectid = #{projectid,jdbcType=VARCHAR},
+				</if>
+		</trim>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+	
+	<!-- 依据id查找 -->
+	<select id="findByKey" parameterType="String" resultMap="BaseResultMap">
+		select 
+			<include refid="Base_Column_List"></include>
+			from community_poi_relative
+    	where id=#{id,jdbcType=VARCHAR}
+	</select>
+	
+</mapper>

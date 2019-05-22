@@ -1,0 +1,31 @@
+package ${root_package_name}.service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ${root_package_name}.dao.${entity_name}Mapper;
+import ${root_package_name}.entity.${entity_name};
+import com.github.rogerli.framework.service.AbstractService;
+
+@Service
+public class ${entity_name}Service extends AbstractService<${entity_name}, String, ${entity_name}Mapper> {
+
+	@SuppressWarnings("unused")
+	private static final Logger LOGGER = LoggerFactory.getLogger(${entity_name}Service.class);
+	@Autowired
+	private ${entity_name}Mapper ${entity_name_low}Mapper;
+	@Override
+	protected ${entity_name}Mapper getMapper() {
+		return ${entity_name_low}Mapper;
+	}
+	
+#foreach ($function in $entity_functions)
+	public ${function.result} ${function.name}(${function.paramtype} ${function.paramname}){
+		return ${entity_name_low}Mapper.${function.name}(${function.paramname})
+	}
+#end
+}

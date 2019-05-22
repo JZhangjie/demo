@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/project"
+	xmlns:tns="http://www.example.org/project"
+	elementFormDefault="qualified">
+
+	<complexType name="field">
+		<attribute name="name" type="string"></attribute>
+		<attribute name="nameupper" type="string"></attribute>
+		<attribute name="dbtype" type="string"></attribute>
+		<attribute name="javatype" type="string"></attribute>
+	</complexType>
+
+	<complexType name="function">
+		<attribute name="name" type="string"></attribute>
+		<attribute name="paramtype" type="string"></attribute>
+		<attribute name="paramname" type="string"></attribute>
+		<attribute name="result" type="string"></attribute>
+	</complexType>
+
+	<complexType name="entity">
+		<sequence>
+			<sequence maxOccurs="1" minOccurs="0">
+				<element name="function" type="tns:function"
+					maxOccurs="unbounded" minOccurs="0">
+				</element>
+			</sequence>
+			<sequence maxOccurs="1" minOccurs="1">
+				<element name="field" type="tns:field"
+					maxOccurs="unbounded" minOccurs="1">
+				</element>
+			</sequence>
+		</sequence>
+		<attribute name="name" type="string"></attribute>
+		<attribute name="namelow" type="string"></attribute>
+		<attribute name="table" type="string"></attribute>
+	</complexType>
+	
+	<complexType name="project">
+		<sequence maxOccurs="1" minOccurs="1">
+			<element name="name" type="string"></element>
+			<element name="packagename" type="string"></element>
+			<element name="packagepath" type="string"></element>
+			<element name="packagetype" type="string"></element>
+			<element name="description" type="string"></element>
+			<element name="dbtype" type="string"></element>
+		</sequence>
+	</complexType>
+
+	<element name="project" type="tns:project"></element>
+</schema>

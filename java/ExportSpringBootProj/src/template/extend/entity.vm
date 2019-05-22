@@ -1,0 +1,39 @@
+package ${root_package_name}.entity;
+
+import java.io.Serializable;
+
+import com.github.rogerli.framework.model.BaseModel;
+
+public class ${entity_name} extends BaseModel implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+#foreach ($attr in $entity_attrs)
+	private ${attr.javatype} ${attr.name};
+#end
+	private String searchstr;
+	private String sort;
+        
+#foreach($attr in $entity_attrs)
+	public ${attr.javatype} get${attr.nameupper}() {
+		return ${attr.name};
+	}
+	public void set${attr.nameupper}(${attr.javatype} ${attr.name}) {
+		this.${attr.name} = ${attr.name};
+	}
+#end
+	public String getSearchstr() {
+		return this.searchstr;
+	}
+	public void setSort(String sort) {
+		this.sort = sort;
+	}
+	public String getSort() {
+		return this.sort;
+	}
+	public void setSearchstr(String searchstr) {
+		this.searchstr = searchstr;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+}

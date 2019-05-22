@@ -1,0 +1,16 @@
+package ${root_package_name}.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import ${root_package_name}.entity.${entity_name};
+import com.github.rogerli.framework.dao.Mapper;
+
+@Repository //dao层接口  
+@org.apache.ibatis.annotations.Mapper
+public interface ${entity_name}Mapper extends Mapper<${entity_name}, String> {
+	#foreach ($function in $entity_functions)
+	public ${function.result} ${function.name}(${function.paramtype} ${function.paramname});
+	#end 
+}

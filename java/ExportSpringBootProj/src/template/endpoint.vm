@@ -1,0 +1,177 @@
+package ${root_package_name}.endpoint;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import ${root_package_name}.entity.${entity_name};
+import ${root_package_name}.service.${entity_name}Service;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+
+@RestController // 控制器接口
+@RequestMapping("/api/${entity_name_low}")
+@CrossOrigin
+public class ${entity_name}Controller{
+
+	@SuppressWarnings("unused")
+	private static final Logger LOGGER = LoggerFactory.getLogger(${entity_name}.class);
+
+	@Autowired
+	private ${entity_name}Service ${entity_name_low}Service;
+
+	protected ${entity_name}Service getService() {
+		return ${entity_name_low}Service;
+	}
+
+	/**
+	 * 获取List
+	 * 
+	 * @param 
+	 * @return
+	 * @throws SQLException
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/findList", method = RequestMethod.POST)
+	@ResponseBody
+	@CrossOrigin
+	public Map<String, Object> findList(@RequestBody ${entity_name} item) throws SQLException, IOException {
+		Map<String, Object> map = new HashMap<String, Object>();
+		List<${entity_name}> list = new ArrayList<${entity_name}>();
+		PageHelper.startPage(item.getPageNum(), item.getPageSize());
+		list = ${entity_name_low}Service.findList(item);
+
+		PageInfo<${entity_name}> pageInfo = new PageInfo<${entity_name}>(list);
+		map.put("code", 0);
+		map.put("msg", "ok");
+		map.put("count", pageInfo.getTotal());
+		map.put("data", pageInfo.getList());
+		return map;
+	}
+		/**
+	 * 获取所有
+	 * 
+	 * @param 
+	 * @return
+	 * @throws SQLException
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/findAll", method = RequestMethod.POST)
+	@ResponseBody
+	@CrossOrigin
+	public List<${entity_name}> findAll(@RequestBody ${entity_name} item) throws SQLException, IOException {
+
+		List<${entity_name}> list = new ArrayList<${entity_name}>();
+
+		list = ${entity_name_low}Service.findList(item);
+
+		return list;
+	}
+	
+	/**
+	 * 新增
+	 * 
+	 * @param mp
+	 * @return
+	 */
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	@ResponseBody
+	@CrossOrigin
+	public String add(@RequestBody ${entity_name} item) throws SQLException, IOException {
+		String id = UUID.randomUUID().toString();
+		item.setId(id);
+		${entity_name_low}Service.insertSelective(item);
+		return item.getId();
+	}
+	
+	/**
+	 * 新增多个
+	 * 
+	 * @param mp
+	 * @return
+	 */
+	@RequestMapping(value = "/addItems", method = RequestMethod.POST)
+	@ResponseBody
+	@CrossOrigin
+	public List<${entity_name}> addItems(@RequestBody List<${entity_name}> items) throws SQLException, IOException {
+		if(items!=null){
+			for(${entity_name} item : items){
+				String id = UUID.randomUUID().toString();
+				item.setId(id);
+				${entity_name_low}Service.insertSelective(item);
+			}
+		}
+		return items;
+	}
+
+	/**
+	 * 根据id获取对象
+	 * 
+	 * @param id
+	 * @return
+	 */
+
+	@RequestMapping(value = "/findByKey", method = RequestMethod.GET)
+	@ResponseBody
+	@CrossOrigin
+	public ${entity_name} findByKey(String id) throws SQLException, IOException {
+		${entity_name} item = ${entity_name_low}Service.findByKey(id);
+		return item;
+	}
+
+	/**
+	 * 编辑
+	 * 
+	 * @param mp
+	 */
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	@ResponseBody
+	@CrossOrigin
+	public Boolean update(@RequestBody ${entity_name} item) throws SQLException, IOException {
+		try {
+			${entity_name_low}Service.updateByKey(item);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	/**
+	 * 删除
+	 * 
+	 * @param ids
+	 * @return 影响行数
+	 * @throws SQLException
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	@ResponseBody
+	@CrossOrigin
+	public int deletes(@RequestBody String[] ids) throws SQLException, IOException {
+		List<String> idsList = Arrays.asList(ids);
+		try {
+			int cont = ${entity_name_low}Service.deleteInBatch(idsList);
+			return cont;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+	}
+
+}

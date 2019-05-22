@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="GBK">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/ProjectXMLReader.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Entity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Entity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Entity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Entity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Entitylist.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Field.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Field.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Fieldlist.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Function.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Function.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Functionlist.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Project.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Project.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/test/demo/entityxml/Project.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

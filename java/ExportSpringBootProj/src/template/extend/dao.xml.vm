@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="${root_package_name}.dao.${entity_name}Mapper">
+	<!-- 数据库和实体类映射 -->
+	<resultMap id="BaseResultMap"
+		type="${root_package_name}.entity.${entity_name}">
+#foreach ($attr in $entity_attrs) 
+		<result column="${attr.name}" jdbcType="${attr.dbtype}" property="${attr.name}" />
+#end 
+	</resultMap>
+
+	<!-- 输出结构定义 -->
+	<sql id="Base_Column_List">#foreach ($attr in $entity_attrs)${attr.name}#if($velocityCount != $entity_attrs.size()),#end#end</sql>
+
+	<!-- 查找列表 -->
+	<select id="findList" parameterType="${root_package_name}.entity.${entity_name}" resultMap="BaseResultMap">
+		select 
+			<include refid="Base_Column_List"></include>
+		from ${entity_table}
+		<trim prefix="where" prefixOverrides="and|or">
+#foreach ($attr in $entity_attrs) 
+			<if test="${attr.name} !='' and ${attr.name} != null">
+				and ${attr.name} = #{${attr.name},jdbcType=${attr.dbtype}}
+			</if>
+#end
+			<if test="searchstr !='' and searchstr !=null" >
+				and name like CONCAT(CONCAT('%', #{searchstr}), '%')
+			</if>
+     	</trim>
+     	<if test="sort !='' and sort !=null" >
+				order by  ${sort}
+		</if>
+	</select>
+	
+	<!-- 新添加的sql -->
+#foreach ($function in $entity_functions)
+	<select id="${function.name}" parameterType="${function.paramtype}" resultMap="BaseResultMap">
+		select 
+			<include refid="Base_Column_List"></include>
+		from ${entity_table}
+		<trim prefix="where" prefixOverrides="and|or">
+#foreach ($attr in $entity_attrs) 
+			<if test="${attr.name} !='' and ${attr.name} != null">
+				and ${attr.name} = #{${attr.name},jdbcType=${attr.dbtype}}
+			</if>
+#end
+			<if test="searchstr !='' and searchstr !=null" >
+				and name like CONCAT(CONCAT('%', #{searchstr}), '%')
+			</if>
+     	</trim>
+	</select>
+#end 
+	
+	<!-- 添加 -->
+	<insert id="insertSelective" parameterType="${root_package_name}.entity.${entity_name}">
+		insert into ${entity_table} 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+#foreach ($attr in $entity_attrs) 
+			<if test="${attr.name} !='' and ${attr.name} != null">
+				${attr.name},
+			</if>
+#end
+     	</trim>
+		values
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+#foreach ($attr in $entity_attrs)
+			<if test="${attr.name} !='' and ${attr.name} != null">
+				#{${attr.name},jdbcType=${attr.dbtype}}, 
+			</if>
+#end 
+		</trim>
+	</insert>
+
+	<!-- 删除 -->
+	<delete id="deleteByKey" parameterType="String">
+		delete from ${entity_table}
+		where id = #{id,jdbcType=VARCHAR}
+	</delete>
+
+	<!-- 修改 -->
+	<update id="updateByKey" parameterType="${root_package_name}.entity.${entity_name}">
+		update ${entity_table} 
+		<trim prefix="set" suffixOverrides=",">
+#foreach ($attr in $entity_attrs)
+#if(${attr.name} != 'id')
+				<if test="${attr.name} != '' and ${attr.name} != null">
+					${attr.name} = #{${attr.name},jdbcType=${attr.dbtype}},
+				</if>
+#end  
+#end 
+		</trim>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+	
+	<!-- 依据id查找 -->
+	<select id="findByKey" parameterType="String" resultMap="BaseResultMap">
+		select 
+			<include refid="Base_Column_List"></include>
+			from ${entity_table}
+    	where id=#{id,jdbcType=VARCHAR}
+	</select>
+	
+</mapper>
