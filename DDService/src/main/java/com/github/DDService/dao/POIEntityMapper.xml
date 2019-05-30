@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.DDService.dao.POIEntityMapper">
+	<!-- 数据库和实体类映射 -->
+	<resultMap id="BaseResultMap"
+		type="com.github.DDService.entity.POIEntity">
+		<result column="id" jdbcType="VARCHAR" property="id" />
+		<result column="typename" jdbcType="VARCHAR" property="typename" />
+		<result column="typelevel1" jdbcType="VARCHAR" property="typelevel1" />
+		<result column="typelevel2" jdbcType="VARCHAR" property="typelevel2" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="jzlb" jdbcType="VARCHAR" property="jzlb" />
+		<result column="jblb" jdbcType="VARCHAR" property="jblb" />
+		<result column="zylx" jdbcType="VARCHAR" property="zylx" />
+		<result column="gylb" jdbcType="VARCHAR" property="gylb" />
+		<result column="gyxt" jdbcType="VARCHAR" property="gyxt" />
+		<result column="cclb" jdbcType="VARCHAR" property="cclb" />
+		<result column="syzk" jdbcType="VARCHAR" property="syzk" />
+		<result column="sfjg" jdbcType="BOOLEAN" property="sfjg" />
+		<result column="parentid" jdbcType="VARCHAR" property="parentid" />
+		<result column="lng" jdbcType="VARCHAR" property="lng" />
+		<result column="lat" jdbcType="VARCHAR" property="lat" />
+		<result column="locationname" jdbcType="VARCHAR" property="locationname" />
+		<result column="addr" jdbcType="VARCHAR" property="addr" />
+		<result column="creatername" jdbcType="VARCHAR" property="creatername" />
+		<result column="createtime" jdbcType="VARCHAR" property="createtime" />
+		<result column="mobile" jdbcType="VARCHAR" property="mobile" />
+		<result column="attachmentpath" jdbcType="VARCHAR" property="attachmentpath" />
+	</resultMap>
+
+	<!-- 输出结构定义 -->
+	<sql id="Base_Column_List">id,typename,typelevel1,typelevel2,name,jzlb,jblb,zylx,gylb,gyxt,cclb,syzk,sfjg,parentid,lng,lat,locationname,addr,creatername,createtime,mobile,attachmentpath</sql>
+
+	<!-- 查找列表 -->
+	<select id="findList" parameterType="com.github.DDService.entity.POIEntity" resultMap="BaseResultMap">
+		select 
+			<include refid="Base_Column_List"></include>
+		from xz_poi_cj
+		<trim prefix="where" prefixOverrides="and|or">
+			<if test="id !='' and id != null">
+				and id = #{id,jdbcType=VARCHAR}
+			</if>
+			<if test="typename !='' and typename != null">
+				and typename = #{typename,jdbcType=VARCHAR}
+			</if>
+			<if test="typelevel1 !='' and typelevel1 != null">
+				and typelevel1 = #{typelevel1,jdbcType=VARCHAR}
+			</if>
+			<if test="typelevel2 !='' and typelevel2 != null">
+				and typelevel2 = #{typelevel2,jdbcType=VARCHAR}
+			</if>
+			<if test="name !='' and name != null">
+				and name = #{name,jdbcType=VARCHAR}
+			</if>
+			<if test="jzlb !='' and jzlb != null">
+				and jzlb = #{jzlb,jdbcType=VARCHAR}
+			</if>
+			<if test="jblb !='' and jblb != null">
+				and jblb = #{jblb,jdbcType=VARCHAR}
+			</if>
+			<if test="zylx !='' and zylx != null">
+				and zylx = #{zylx,jdbcType=VARCHAR}
+			</if>
+			<if test="gylb !='' and gylb != null">
+				and gylb = #{gylb,jdbcType=VARCHAR}
+			</if>
+			<if test="gyxt !='' and gyxt != null">
+				and gyxt = #{gyxt,jdbcType=VARCHAR}
+			</if>
+			<if test="cclb !='' and cclb != null">
+				and cclb = #{cclb,jdbcType=VARCHAR}
+			</if>
+			<if test="syzk !='' and syzk != null">
+				and syzk = #{syzk,jdbcType=VARCHAR}
+			</if>
+			<if test="sfjg !='' and sfjg != null">
+				and sfjg = #{sfjg,jdbcType=BOOLEAN}
+			</if>
+			<if test="parentid !='' and parentid != null">
+				and parentid = #{parentid,jdbcType=VARCHAR}
+			</if>
+			<if test="lng !='' and lng != null">
+				and lng = #{lng,jdbcType=VARCHAR}
+			</if>
+			<if test="lat !='' and lat != null">
+				and lat = #{lat,jdbcType=VARCHAR}
+			</if>
+			<if test="locationname !='' and locationname != null">
+				and locationname = #{locationname,jdbcType=VARCHAR}
+			</if>
+			<if test="addr !='' and addr != null">
+				and addr = #{addr,jdbcType=VARCHAR}
+			</if>
+			<if test="creatername !='' and creatername != null">
+				and creatername = #{creatername,jdbcType=VARCHAR}
+			</if>
+			<if test="createtime !='' and createtime != null">
+				and createtime = #{createtime,jdbcType=VARCHAR}
+			</if>
+			<if test="mobile !='' and mobile != null">
+				and mobile = #{mobile,jdbcType=VARCHAR}
+			</if>
+			<if test="attachmentpath !='' and attachmentpath != null">
+				and attachmentpath = #{attachmentpath,jdbcType=VARCHAR}
+			</if>
+			<if test="searchstr !='' and searchstr !=null" >
+				and name like CONCAT(CONCAT('%', #{searchstr}), '%')
+			</if>
+     	</trim>
+     	<if test="sort !='' and sort !=null" >
+				order by  ${sort}
+		</if>
+	</select>
+	
+	<!-- 新添加的sql -->
+	
+	<!-- 添加 -->
+	<insert id="insertSelective" parameterType="com.github.DDService.entity.POIEntity">
+		insert into xz_poi_cj 
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id !='' and id != null">
+				id,
+			</if>
+			<if test="typename !='' and typename != null">
+				typename,
+			</if>
+			<if test="typelevel1 !='' and typelevel1 != null">
+				typelevel1,
+			</if>
+			<if test="typelevel2 !='' and typelevel2 != null">
+				typelevel2,
+			</if>
+			<if test="name !='' and name != null">
+				name,
+			</if>
+			<if test="jzlb !='' and jzlb != null">
+				jzlb,
+			</if>
+			<if test="jblb !='' and jblb != null">
+				jblb,
+			</if>
+			<if test="zylx !='' and zylx != null">
+				zylx,
+			</if>
+			<if test="gylb !='' and gylb != null">
+				gylb,
+			</if>
+			<if test="gyxt !='' and gyxt != null">
+				gyxt,
+			</if>
+			<if test="cclb !='' and cclb != null">
+				cclb,
+			</if>
+			<if test="syzk !='' and syzk != null">
+				syzk,
+			</if>
+			<if test="sfjg !='' and sfjg != null">
+				sfjg,
+			</if>
+			<if test="parentid !='' and parentid != null">
+				parentid,
+			</if>
+			<if test="lng !='' and lng != null">
+				lng,
+			</if>
+			<if test="lat !='' and lat != null">
+				lat,
+			</if>
+			<if test="locationname !='' and locationname != null">
+				locationname,
+			</if>
+			<if test="addr !='' and addr != null">
+				addr,
+			</if>
+			<if test="creatername !='' and creatername != null">
+				creatername,
+			</if>
+			<if test="createtime !='' and createtime != null">
+				createtime,
+			</if>
+			<if test="mobile !='' and mobile != null">
+				mobile,
+			</if>
+			<if test="attachmentpath !='' and attachmentpath != null">
+				attachmentpath,
+			</if>
+     	</trim>
+		values
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id !='' and id != null">
+				#{id,jdbcType=VARCHAR}, 
+			</if>
+			<if test="typename !='' and typename != null">
+				#{typename,jdbcType=VARCHAR}, 
+			</if>
+			<if test="typelevel1 !='' and typelevel1 != null">
+				#{typelevel1,jdbcType=VARCHAR}, 
+			</if>
+			<if test="typelevel2 !='' and typelevel2 != null">
+				#{typelevel2,jdbcType=VARCHAR}, 
+			</if>
+			<if test="name !='' and name != null">
+				#{name,jdbcType=VARCHAR}, 
+			</if>
+			<if test="jzlb !='' and jzlb != null">
+				#{jzlb,jdbcType=VARCHAR}, 
+			</if>
+			<if test="jblb !='' and jblb != null">
+				#{jblb,jdbcType=VARCHAR}, 
+			</if>
+			<if test="zylx !='' and zylx != null">
+				#{zylx,jdbcType=VARCHAR}, 
+			</if>
+			<if test="gylb !='' and gylb != null">
+				#{gylb,jdbcType=VARCHAR}, 
+			</if>
+			<if test="gyxt !='' and gyxt != null">
+				#{gyxt,jdbcType=VARCHAR}, 
+			</if>
+			<if test="cclb !='' and cclb != null">
+				#{cclb,jdbcType=VARCHAR}, 
+			</if>
+			<if test="syzk !='' and syzk != null">
+				#{syzk,jdbcType=VARCHAR}, 
+			</if>
+			<if test="sfjg !='' and sfjg != null">
+				#{sfjg,jdbcType=BOOLEAN}, 
+			</if>
+			<if test="parentid !='' and parentid != null">
+				#{parentid,jdbcType=VARCHAR}, 
+			</if>
+			<if test="lng !='' and lng != null">
+				#{lng,jdbcType=VARCHAR}, 
+			</if>
+			<if test="lat !='' and lat != null">
+				#{lat,jdbcType=VARCHAR}, 
+			</if>
+			<if test="locationname !='' and locationname != null">
+				#{locationname,jdbcType=VARCHAR}, 
+			</if>
+			<if test="addr !='' and addr != null">
+				#{addr,jdbcType=VARCHAR}, 
+			</if>
+			<if test="creatername !='' and creatername != null">
+				#{creatername,jdbcType=VARCHAR}, 
+			</if>
+			<if test="createtime !='' and createtime != null">
+				#{createtime,jdbcType=VARCHAR}, 
+			</if>
+			<if test="mobile !='' and mobile != null">
+				#{mobile,jdbcType=VARCHAR}, 
+			</if>
+			<if test="attachmentpath !='' and attachmentpath != null">
+				#{attachmentpath,jdbcType=VARCHAR}, 
+			</if>
+		</trim>
+	</insert>
+
+	<!-- 删除 -->
+	<delete id="deleteByKey" parameterType="String">
+		delete from xz_poi_cj
+		where id = #{id,jdbcType=VARCHAR}
+	</delete>
+
+	<!-- 修改 -->
+	<update id="updateByKey" parameterType="com.github.DDService.entity.POIEntity">
+		update xz_poi_cj 
+		<trim prefix="set" suffixOverrides=",">
+				<if test="typename != '' and typename != null">
+					typename = #{typename,jdbcType=VARCHAR},
+				</if>
+				<if test="typelevel1 != '' and typelevel1 != null">
+					typelevel1 = #{typelevel1,jdbcType=VARCHAR},
+				</if>
+				<if test="typelevel2 != '' and typelevel2 != null">
+					typelevel2 = #{typelevel2,jdbcType=VARCHAR},
+				</if>
+				<if test="name != '' and name != null">
+					name = #{name,jdbcType=VARCHAR},
+				</if>
+				<if test="jzlb != '' and jzlb != null">
+					jzlb = #{jzlb,jdbcType=VARCHAR},
+				</if>
+				<if test="jblb != '' and jblb != null">
+					jblb = #{jblb,jdbcType=VARCHAR},
+				</if>
+				<if test="zylx != '' and zylx != null">
+					zylx = #{zylx,jdbcType=VARCHAR},
+				</if>
+				<if test="gylb != '' and gylb != null">
+					gylb = #{gylb,jdbcType=VARCHAR},
+				</if>
+				<if test="gyxt != '' and gyxt != null">
+					gyxt = #{gyxt,jdbcType=VARCHAR},
+				</if>
+				<if test="cclb != '' and cclb != null">
+					cclb = #{cclb,jdbcType=VARCHAR},
+				</if>
+				<if test="syzk != '' and syzk != null">
+					syzk = #{syzk,jdbcType=VARCHAR},
+				</if>
+				<if test="sfjg != '' and sfjg != null">
+					sfjg = #{sfjg,jdbcType=BOOLEAN},
+				</if>
+				<if test="parentid != '' and parentid != null">
+					parentid = #{parentid,jdbcType=VARCHAR},
+				</if>
+				<if test="lng != '' and lng != null">
+					lng = #{lng,jdbcType=VARCHAR},
+				</if>
+				<if test="lat != '' and lat != null">
+					lat = #{lat,jdbcType=VARCHAR},
+				</if>
+				<if test="locationname != '' and locationname != null">
+					locationname = #{locationname,jdbcType=VARCHAR},
+				</if>
+				<if test="addr != '' and addr != null">
+					addr = #{addr,jdbcType=VARCHAR},
+				</if>
+				<if test="creatername != '' and creatername != null">
+					creatername = #{creatername,jdbcType=VARCHAR},
+				</if>
+				<if test="createtime != '' and createtime != null">
+					createtime = #{createtime,jdbcType=VARCHAR},
+				</if>
+				<if test="mobile != '' and mobile != null">
+					mobile = #{mobile,jdbcType=VARCHAR},
+				</if>
+				<if test="attachmentpath != '' and attachmentpath != null">
+					attachmentpath = #{attachmentpath,jdbcType=VARCHAR},
+				</if>
+		</trim>
+		where id = #{id,jdbcType=VARCHAR}
+	</update>
+	
+	<!-- 依据id查找 -->
+	<select id="findByKey" parameterType="String" resultMap="BaseResultMap">
+		select 
+			<include refid="Base_Column_List"></include>
+			from xz_poi_cj
+    	where id=#{id,jdbcType=VARCHAR}
+	</select>
+	
+</mapper>
