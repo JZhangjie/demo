@@ -16,21 +16,65 @@ BaseLayer.fn.config={
 	height:600,
 	top:0,
 	left:0,
-	state:Constants.dialog.states[0]    //'full','normal','min' 
+	state:Constants.dialog.states[0]    //'normal','full','min' 
 }
 
 //界面生成入口
 BaseLayer.fn.create=function(){
 	var that = this;
-	this.dom.append(this.createShade());
-	this.dom.append(this.createContentContainer());
-	$("body").append(this.dom);
+
+	this.initDom();
 	
 	this.setContentContainerSize();
 	
+	this.initEvents();
 	$(window).resize(function(){
-		that.setContentContainerSizeAndPosition();
+		that.setContentContainerSize();
 	});
+}
+
+//生成dom对象
+BaseLayer.fn.initDom=function(){
+	this.dom.append(this.createShade());
+	this.dom.append(this.createContentContainer());
+	this.dom.append(this.createMovePanel());
+	$("body").append(this.dom);
+}
+
+//添加移动、缩放等事件
+BaseLayer.fn.initEvents=function(){
+	var that = this;
+	if(this.dom){
+			//移动事件
+			var title = this.dom.find('.base-layer-title');
+			var move = this.dom.find('.base-layer-move');
+			
+			title.mousedown(function(e){
+				that.dom.data('moving',true);
+				that.dom.data('X',e.clientX);
+				that.dom.data('Y',e.clientY);
+				move.show();
+			});
+			$(window).mousemove(function(e){
+				if(that.dom.data('moving')){
+					var x = e.clientX-that.dom.data('X');
+					var y = e.clientY-that.dom.data('Y');
+					that.dom.data('X',e.clientX);
+					that.dom.data('Y',e.clientY);
+					if(x || y){
+						that.resizePosition(x?x:0,y?y:0);
+					}
+				}
+			});
+			$(window).mouseup(function(e){
+				if(that.dom.data('moving')){
+					that.dom.data('moving',false);
+					that.dom.data('X',NaN);
+					that.dom.data('Y',NaN);
+					move.hide();
+				}
+			});
+	}
 }
 
 //生成遮罩
@@ -58,30 +102,15 @@ BaseLayer.fn.createTitle=function(){
 	var that = this;
 	var title= $("<div>");
 	title.addClass("base-layer-title");
-	title.mousedown(function(e){
-		title.data('moving',true);
-		title.data('X',e.clientX);
-		title.data('Y',e.clientY);
-		console.log("down",e.clientX,e.clientY);
-	});
-	title.mousemove(function(e){
-		if(title.data('moving')){
-			var x = e.clientX-title.data('X');
-			var y = e.clientY-title.data('Y');
-			title.data('X',e.clientX);
-			title.data('Y',e.clientY);
-			if(x || y){
-				that.resizePosition(x?x:0,y?y:0);
-			}
-			console.log("move",e.clientX,e.clientY);
-		}
-	});
-	title.mouseup(function(e){
-		title.data('moving',false);
-		title.data('X',NaN);
-		title.data('Y',NaN);
-	});
 	return title;
+}
+
+//生成标题
+BaseLayer.fn.createMovePanel=function(){
+	var that = this;
+	var move= $("<div>");
+	move.addClass("base-layer-move");
+	return move;
 }
 
 //生成内容 ，外部传入
@@ -124,15 +153,24 @@ BaseLayer.fn.setContentContainerSize=function(){
 }
 //设置窗口大小和位置
 BaseLayer.fn.resizePosition=function(mx,my){
+	
 	if(this.dom){
 		var container = this.dom.find(".base-layer-container");
 	}
+	var viewWidth=window.innerWidth;
+	var viewHeight=window.innerHeight;
 	if(this.config.state==Constants.dialog.states[1]){
 		container.css('left',0);
 		container.css('top',0);
 	}else{
-		container.css('left',container.offset().left+mx+"px");
-		container.css('top',container.offset().top+my+"px");
+		var left = container.position().left+mx;
+		var top = container.position().top+my;
+		var maxtop =  viewHeight-this.config.height-1;
+		var maxleft = viewWidth-this.config.width-1;
+		top=top<1?1:(top>maxtop?maxtop:top);
+		left=left<1?1:(left>maxleft?maxleft:left)
+		container.css('left',left+"px");
+		container.css('top',top+"px");
 	}
 }
 

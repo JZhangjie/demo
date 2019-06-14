@@ -18,5 +18,6 @@ module.exports={
 	],
 	externals:{
 		jquery: 'jQuery'
-	}
+	},
+	devtool: 'source-map'
 }
