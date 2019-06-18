@@ -1,18 +1,9 @@
-body .base-layer{
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-body .base-layer .base-layer-icon{
+body .base-layer-icon{
 	background: url(icon.png);
 }
 
-body .base-layer .base-layer-shade{
-	position: absolute;
+body .base-layer-shade{
+	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -21,14 +12,7 @@ body .base-layer .base-layer-shade{
 	background-color: #000000;
 }
 
-body .base-layer .base-layer-title{
-	width: 100%;
-	height: 36px;
-	background-color: #CCCCCC;
-	cursor: move;
-}
-
-body .base-layer .base-layer-move{
+body .base-layer-move{
 	display: none;
 	position: absolute;
 	top: 0;
@@ -39,17 +23,36 @@ body .base-layer .base-layer-move{
 	background-color: #000000;
 }
 
-body .base-layer .base-layer-container{
-	min-width: 200px;
-	min-height: 100px;
-	background-color: #FFFFFF;
+body .base-layer-container{
 	position: fixed;
+	overflow: hidden;
 }
 
-body .base-layer .base-layer-content{
+body .base-layer-title{
+	height: 36px;
+	line-height: 36px;
+	padding-left:8px ;
+	background-color: #CCCCCC;
+	cursor: move;
 }
 
-body .base-layer .base-layer-tools{
+body .base-layer-content{
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	background: #FFFFFF;
+}
+
+body .base-layer-msg{
+	text-align: center;
+	padding: 16px;
+	background: #000000;
+	opacity: 0.6;
+	border-radius: 8px;
+	color: #FFFFFF;
+}
+
+body .base-layer-tools{
 	display: flex;
 	flex-direction: row;
 	align-content: space-between;
@@ -58,15 +61,41 @@ body .base-layer .base-layer-tools{
 	top: 10px;
 	right: 10px;
 }
-
-body .base-layer .base-layer-close{
-	background-position: 1px  -40px;
+body .base-layer-tools-item{
+	height: 16px;
+	width: 16px;
+	cursor: pointer;
+}
+body .base-layer-tools-item:hover{
 	height: 16px;
 	width: 16px;
 	cursor: pointer;
 }
 
-body .base-layer .base-layer-zoom{
+body .base-layer-close{
+	background-position: 0  -40px;
+	height: 16px;
+	width: 16px;
+	cursor: pointer;
+}
+
+body .base-layer-min{
+	background-position: -63px  -40px;
+	height: 16px;
+	width: 16px;
+	cursor: pointer;
+	margin-right: 8px;
+}
+
+body .base-layer-max{
+	background-position: -32px  -40px;
+	height: 16px;
+	width: 16px;
+	cursor: pointer;
+	margin-right: 8px;
+}
+
+body .base-layer-zoom{
 	height: 16px;
 	width: 16px;
 	position: absolute;

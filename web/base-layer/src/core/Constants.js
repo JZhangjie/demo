@@ -1,5 +1,5 @@
 module.exports={
 	dialog:{
-		states:['normal','full','min']
+		states:['min','normal','max']
 	}
 }
