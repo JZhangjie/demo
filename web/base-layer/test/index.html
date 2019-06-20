@@ -10,26 +10,28 @@
 		<script type="application/javascript" src="../dist/base-layer.js"></script>
 		
 	</head>
-	<body style="height: 2000px;width: 100px;background-color: aquamarine">
-		<div id="vueModel"  style="margin-right: 32px;margin-top: 16px;">
+	<body style="height: 2000px;width: 400px;background-color: aquamarine">
+		<div id="vueModel"  style="margin-right: 32px;margin-top: 16px;height: 300px;">
 
 		</div>
-		<button id="test">测试按钮</button>
+		<button id="test" style="margin-left: 200px;">测试按钮</button>
 	</body>
 	<script>
 		$("#test").click(function(e){
 			console.log(baseLayer);
 			
-			baseLayer.open({
-				hasShade:false,
-				width:300,
-				height:200,
-				content:$("<div style='background:#FF00FF;width:100%;height:100%;'>").html("测测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试试")
-			});
-			// baseLayer.msg({
-			// 	time:0,
-			// 	content:"测试"
+			// baseLayer.open({
+			// 	hasShade:false,
+			// 	width:300,
+			// 	height:200,
+			// 	content:$("<div style='background:#FF00FF;width:100%;height:100%;'>").html("测测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试试")
 			// });
+			baseLayer.tip({
+				anchor:$("#test"),
+				width:200,
+				content:'df',
+				anchorPosition:'top'
+			});
 		});
 	</script>
 </html>

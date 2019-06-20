@@ -1,5 +1,6 @@
 var BaseLayer=require('./core/BaseLayer.js') ;
 var MsgLayer=require('./Layer/MsgLayer.js') ;
+var TipLayer=require('./Layer/TipLayer.js') ;
 
 var baseLayer={
 	v:"1.0.0",
@@ -13,6 +14,10 @@ var baseLayer={
 	},
 	msg:function(content){
 		let layer = new MsgLayer(content);
+		layer.create();
+	},
+	tip:function(content,anchor,options){
+		let layer = new TipLayer(content);
 		layer.create();
 	}
 }

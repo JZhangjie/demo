@@ -45,11 +45,64 @@ body .base-layer-content{
 
 body .base-layer-msg{
 	text-align: center;
-	padding: 16px;
+	padding: 8px 16px;
 	background: #000000;
 	opacity: 0.6;
-	border-radius: 8px;
+	border-radius: 4px;
 	color: #FFFFFF;
+}
+
+body .base-layer-tip{
+	position: relative;
+	text-align: center;
+	padding: 8px 16px;
+	margin: 15px;
+	background: #000000;
+	opacity: 0.6;
+	border-radius: 4px;
+	color: #FFFFFF;
+}
+body .base-layer-tip .bottom-arrow{
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-color:#000000 transparent transparent #000000;
+	border-style: solid;
+	display: inline-block;
+	position: absolute;
+	bottom: -15px;
+	left: 15px;
+}
+body .base-layer-tip .right-arrow{
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-color:#000000 transparent transparent #000000;
+	border-style: solid;
+	display: inline-block;
+	position: absolute;
+	right: -15px;
+}
+body .base-layer-tip .left-arrow{
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-color:#000000 #000000 transparent transparent ;
+	border-style: solid;
+	display: inline-block;
+	position: absolute;
+	left: -15px;
+}
+body .base-layer-tip .top-arrow{
+	width: 0;
+	height: 0;
+	border-width: 10px;
+	border-color: transparent transparent #000000 #000000;
+	border-style: solid;
+	display: inline-block;
+	position: absolute;
+	top: -15px;
+	left: 15px;
 }
 
 body .base-layer-tools{

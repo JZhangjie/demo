@@ -12,6 +12,8 @@ BaseLayer.fn=BaseLayer.prototype;
 //默认初始配置
 BaseLayer.fn.config={
 	title:'弹窗',
+	anchor:null,
+	anchorPosition:Constants.dialog.tipPositions[0],
 	content:'',
 	hasTitle:true,
 	titleHeight:36,
@@ -78,6 +80,12 @@ BaseLayer.fn.initEvents=function(){
 	$(window).resize(function(){
 		that.setContentContainerSizeAndPosition();
 	});
+	
+	if(this.config.anchor){
+		$(window).scroll(function(e){
+			that.setContentContainerSizeAndPosition();
+		});
+	}
 	
 	//定时关闭
 	if(this.config.time){
@@ -249,6 +257,12 @@ BaseLayer.fn.createTools=function(){
 
 //设置窗口大小和位置
 BaseLayer.fn.setContentContainerSizeAndPosition=function(){
+	this.setContentContainerSize();
+	this.setContentContainerPosition();
+}
+
+//设置窗口大小
+BaseLayer.fn.setContentContainerSize=function(){
 	if(!this.containerDom){
 		return;
 	}
@@ -260,8 +274,6 @@ BaseLayer.fn.setContentContainerSizeAndPosition=function(){
 		case Constants.dialog.states[0]:
 			container.css('height',this.config.titleHeight+"px");
 			container.css('width',this.config.titleWidth+"px");
-			container.css('left',"8px");
-			container.css('top',(viewHeight-this.config.titleHeight-8)+"px");
 			break;
 		case Constants.dialog.states[1]:
 			//使用传入的width、height
@@ -275,7 +287,33 @@ BaseLayer.fn.setContentContainerSizeAndPosition=function(){
 			}else{
 				container.css('height','auto');
 			}
-			
+
+			break;
+		case Constants.dialog.states[2]:
+			container.css('height',viewHeight-2+"px");
+			container.css('width',viewWidth-2+"px");
+			break;
+		default:
+			break;
+	}
+}
+
+//设置窗口位置
+BaseLayer.fn.setContentContainerPosition=function(){
+	if(!this.containerDom){
+		return;
+	}
+	var container = this.containerDom;
+	var viewWidth=this.shadeDom.width();
+	var viewHeight=this.shadeDom.height();
+
+	switch (this.config.state){
+		case Constants.dialog.states[0]:
+			container.css('left',"8px");
+			container.css('top',(viewHeight-this.config.titleHeight-8)+"px");
+			break;
+		case Constants.dialog.states[1]:
+
 			var cWidth=container.width();
 			var cHeight=container.height();
 			//使用传入的top、left
@@ -292,8 +330,6 @@ BaseLayer.fn.setContentContainerSizeAndPosition=function(){
 
 			break;
 		case Constants.dialog.states[2]:
-			container.css('height',viewHeight-2+"px");
-			container.css('width',viewWidth-2+"px");
 			container.css('left',1);
 			container.css('top',1);
 			break;
@@ -301,6 +337,7 @@ BaseLayer.fn.setContentContainerSizeAndPosition=function(){
 			break;
 	}
 }
+
 
 //缩放窗口大小
 BaseLayer.fn.resetSize=function(mx,my){
