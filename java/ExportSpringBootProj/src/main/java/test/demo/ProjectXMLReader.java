@@ -18,9 +18,9 @@ public class ProjectXMLReader {
             Unmarshaller u = jc.createUnmarshaller();
             String xmlFilePath = System.getProperty("user.dir")+"\\src\\xml\\project.xsd.xml";
             if(xmlpath != null && !xmlpath.trim().equals("")){
-                xmlFilePath = xmlFilePath;
+                xmlFilePath = xmlpath;
             }
-            System.out.println("Ê¹ÓÃµÄxmlÎÄ¼şÎª:"+xmlFilePath);
+            System.out.println("æ¨¡æ¿åº“:"+xmlFilePath);
             Project project = (Project) u.unmarshal(new File(xmlFilePath));
             return project;
         } catch (Exception e) {

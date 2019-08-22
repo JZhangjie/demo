@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+  <name>WFJSJG_Demo</name>
+  <projectpath>D:\work\workspace\GIT\ExportSpringBootProject\ExportSpringBootProj\export</projectpath>
+  <packagename>com.wfjsjg.ssj</packagename>
+  <packagepath>com/wfjsjg/ssj</packagepath>
+  <packagetype>war</packagetype>
+  <description>ssj</description>
+  <dbdriver>org.postgresql.Driver</dbdriver>
+  <dburl>jdbc:postgresql://127.0.0.1:5432/wfjsjg</dburl>
+  <dbusername>postgres</dbusername>
+  <dbpassword>123456</dbpassword>
+  <tables>Ccjh_rw_rymlk,g_user</tables>
+  <ignoretables>spatial_ref_sys,pointcloud_formats</ignoretables>
+  <entities>
+    <entity>
+      <name>Ccjh_rw_rymlk</name>
+      <namelow>ccjh_rw_rymlk</namelow>
+      <table>ccjh_rw_rymlk</table>
+      <primarykey>
+	      <name>gid</name>
+          <nameupper>Gid</nameupper>
+          <dbtype>INTEGER</dbtype>
+          <javatype>Integer</javatype>
+          <auto>true</auto>
+      </primarykey>
+      <fields>
+        <field>
+          <name>ccjh_rw_id</name>
+          <nameupper>Ccjh_rw_id</nameupper>
+          <dbtype>INTEGER</dbtype>
+          <javatype>Integer</javatype>
+          <search>true</search>
+        </field>
+      </fields>
+      <functions>
+      	<function>
+      		<name>findRymlkList</name>
+      		<paramtype>Ccjh_rw_rymlk</paramtype>
+      		<paramname>item</paramname>
+      		<result>List&lt;HashMap&lt;String,Object&gt;&gt;</result>
+      	</function>
+      </functions>
+    </entity>
+  </entities>
+</project>

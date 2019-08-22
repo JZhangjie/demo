@@ -14,6 +14,8 @@ public class Entity {
     @XmlElementWrapper(name="fields")
     @XmlElement(name="field")
     protected List<Field> fields;
+    @XmlElement(name="primarykey")
+    protected Field primarykey;
     @XmlElement(name = "name")
     protected String name;
     @XmlElement(name = "namelow")
@@ -60,4 +62,20 @@ public class Entity {
     public void setTable(String table) {
         this.table = table;
     }
+
+	public Field getPrimarykey() {
+		return primarykey;
+	}
+
+	public void setPrimarykey(Field primarykey) {
+		this.primarykey = primarykey;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		Entity oField = (Entity)obj;
+		
+		return oField==null?false:oField.getTable().toLowerCase().equals(this.getTable().toLowerCase());
+	}
 }

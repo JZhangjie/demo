@@ -20,6 +20,13 @@ public class ProjectBuilder {
 	private String rootPath="";
 	private Project project;
 	
+	public ProjectBuilder() {
+	}
+	
+	public ProjectBuilder(String templateDir) {
+		this.templateDir = templateDir;
+	}
+	
 	public boolean build(String template,Project project) {
 		
 		//项目构建
@@ -44,7 +51,7 @@ public class ProjectBuilder {
 		
 		//构造业务类
 		List<Entity> entities= this.project.getEntities();
-		EntityBuilder entityBuilder = new EntityBuilder();
+		EntityBuilder entityBuilder = new EntityBuilder(this.templateDir);
 		if(entities!=null && entities.size()>0){
 			for (Entity entity:entities) {
 				entityBuilder.build(project,entity);
@@ -67,11 +74,13 @@ public class ProjectBuilder {
         Template actionTpt2 = velocityEngine.getTemplate("application.properties.vm","UTF-8"); 
         Template actionTpt3 = velocityEngine.getTemplate("SpringBootStartApplication.java.vm","UTF-8"); 
         Template actionTpt4 = velocityEngine.getTemplate("TomcatStartApplication.java.vm","UTF-8"); 
+        Template actionTpt5 = velocityEngine.getTemplate("MybatisConf.java.vm","UTF-8"); 
         
         outFile(actionTpt,ctx, makeDir(this.rootPath),                         "pom.xml");
         outFile(actionTpt2,ctx,makeDir(this.rootPath+"/src/main/resources"),   "application.properties"); 
         outFile(actionTpt3,ctx,makeDir(packagepath),                           "SpringBootStartApplication.java"); 
         outFile(actionTpt4,ctx,makeDir(packagepath),                           "TomcatStartApplication.java"); 
+        outFile(actionTpt5,ctx,makeDir(packagepath),                           "MybatisConf.java"); 
         System.out.println( "项目文件新建完成>>>"+this.project.getName());
     }
 	
@@ -98,7 +107,11 @@ public class ProjectBuilder {
         ctx.put("projectname", project.getName());
         ctx.put("description", project.getDescription());
         ctx.put("packagetype", project.getPackagetype()); 
-        ctx.put("dbtype", project.getDbtype()); 
+        ctx.put("dbdriver", project.getDbdriver()); 
+        ctx.put("dburl", project.getDburl()); 
+        ctx.put("dbusername", project.getDbusername()); 
+        ctx.put("dbpassword", project.getDbpassword()); 
+        
         return ctx;
 	}
 	

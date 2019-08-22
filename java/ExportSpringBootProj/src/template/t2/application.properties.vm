@@ -1,0 +1,13 @@
+#数据库配置
+spring.datasource.driver-class-name=${dbdriver}
+spring.datasource.url=${dburl}
+spring.datasource.username=${dbusername}
+spring.datasource.password=${dbpassword}
+
+#mybatis
+mybatis.typeAliasesPackage=${packagename}.entity
+mybatis.mapperLocations=classpath:${packagepath}/dao/*Mapper.xml
+logging.level.${packagename}.dao=debug
+
+#service
+server.port=8087

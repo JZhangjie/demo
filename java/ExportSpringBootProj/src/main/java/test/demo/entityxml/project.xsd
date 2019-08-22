@@ -9,6 +9,7 @@
 		<attribute name="nameupper" type="string"></attribute>
 		<attribute name="dbtype" type="string"></attribute>
 		<attribute name="javatype" type="string"></attribute>
+		<attribute name="auto" type="boolean"></attribute>
 	</complexType>
 
 	<complexType name="function">

@@ -10,11 +10,22 @@ import test.demo.entityxml.Project;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.function.Predicate;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+import javax.lang.model.element.VariableElement;
 
 public  class EntityBuilder {
 	String templateDir = System.getProperty("user.dir")+"\\src\\template";
+	
+	public EntityBuilder(String templateDir) {
+		this.templateDir = templateDir;
+	}
 	
 	public boolean build(Project project, Entity entity) {
 		buildFiles(project,entity);
@@ -61,13 +72,22 @@ public  class EntityBuilder {
 	 * 使用Entity构建VelocityContext对象
 	 */
 	private VelocityContext buildContext(Project project,Entity entity) {
+		List<test.demo.entityxml.Field> entity_attrs_forsearch = new ArrayList<test.demo.entityxml.Field>();
+		for(int i=0;i<entity.getFields().size();i++) {
+			test.demo.entityxml.Field field = entity.getFields().get(i);
+			if(field.isSearch()) {
+				entity_attrs_forsearch.add(field);
+			}
+		}
         VelocityContext ctx = new VelocityContext(); 
         ctx.put("root_package_name", project.getPackagename());
         ctx.put("entity_name", entity.getName());
         ctx.put("entity_name_low", entity.getNamelow());
         ctx.put("entity_table", entity.getTable());
         ctx.put("entity_attrs", entity.getFields());
-        ctx.put("entity_functions", entity.getFunctions()); 
+        ctx.put("entity_attrs_forsearch", entity_attrs_forsearch);
+        ctx.put("entity_functions", entity.getFunctions());
+        ctx.put("entity_key", entity.getPrimarykey()); 
         return ctx;
 	}
 	
