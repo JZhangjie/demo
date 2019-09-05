@@ -22,6 +22,8 @@ public class Entity {
     protected String namelow;
     @XmlElement(name = "table")
     protected String table;
+    @XmlElement(name = "operate")
+    protected String operate;
 
     public List<Function> getFunctions() {
         return functions;
@@ -71,6 +73,14 @@ public class Entity {
 		this.primarykey = primarykey;
 	}
 	
+	public String getOperate() {
+		return operate;
+	}
+
+	public void setOperate(String operate) {
+		this.operate = operate;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		// TODO Auto-generated method stub

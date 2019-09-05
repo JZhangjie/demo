@@ -1,114 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <project>
-  <name>GISDataService</name>	<!-- 项目名称-->
-  <projectpath>D:\work\workspace\GIT\ExportSpringBootProject\ExportSpringBootProj\export</projectpath>	<!-- 项目输出的位置 -->
-  <packagename>com.geo.test</packagename>	<!-- java包名 -->
-  <packagepath>com/geo/test</packagepath>	<!-- java包路径 -->
-  <packagetype>war</packagetype> <!-- 项目打包类型 jar war 用于生产pom文件 -->
-  <description>gis</description> <!-- 项目描述 -->
-  <dbtype>postgres</dbtype>  	 <!-- 数据库类型   postgres oracle -->
+  <name>WFJSJG_FCASE</name>
+  <projectpath>D:\work\workspace\GIT\ExportSpringBootProject</projectpath>
+  <packagename>com.wfjsjg.fcase</packagename>
+  <packagepath>com/wfjsjg/fcase</packagepath>
+  <packagetype>war</packagetype>
+  <description>fcase</description>
+  <dbdriver>org.postgresql.Driver</dbdriver>
+  <dburl>jdbc:postgresql://127.0.0.1:5432/wfjsjg</dburl>
+  <dbusername>postgres</dbusername>
+  <dbpassword>123456</dbpassword>
+  <tablefilter>^f_</tablefilter><!-- 筛选以f_开头的表 -->
+  <tables>f_stage</tables>		<!-- 没有内容时，读取数据库所有表 -->
+  <ignoretables>屏蔽的表名</ignoretables>
   <entities>
     <entity>
-      <name>Community</name>		<!-- 实体类名 -->
-      <namelow>community</namelow>	<!-- 实体类名小写 -->
-      <table>community</table>		<!-- 对应数据库表名 -->
-      <fields>
-        <field>
-          <name>fid__1</name>			<!-- 实体类属性名 与数据库中表字段名称一致-->
-          <nameupper>Fid__1</nameupper>	<!-- 实体类属性名首字母大写  用于构建get、set方法 -->
-          <dbtype>NUMERIC</dbtype>		<!-- 实体类属性对应的数据库中标字段类型 -->
-          <javatype>double</javatype>	<!-- 实体类属性的java类型 -->
-        </field>
-        <field>
-          <name>longitude</name>
-          <nameupper>Longitude</nameupper>
-          <dbtype>NUMERIC</dbtype>
-          <javatype>double</javatype>
-        </field>
-        <field>
-          <name>latitude</name>
-          <nameupper>Latitude</nameupper>
-          <dbtype>NUMERIC</dbtype>
-          <javatype>double</javatype>
-        </field>
-      </fields>
-      <functions></functions>			<!--  -->
-    </entity>
-    <entity>
-      <name>Poi</name>
-      <namelow>poi</namelow>
-      <table>poidata</table>
-      <fields>
-        <field>
-          <name>id</name>
-          <nameupper>Id</nameupper>
-          <dbtype>INTEGER</dbtype>
-          <javatype>int</javatype>
-        </field>
-        <field>
-          <name>gps_x</name>
-          <nameupper>Gps_x</nameupper>
-          <dbtype>NUMERIC</dbtype>
-          <javatype>double</javatype>
-        </field>
-        <field>
-          <name>gps_y</name>
-          <nameupper>Gps_y</nameupper>
-          <dbtype>NUMERIC</dbtype>
-          <javatype>double</javatype>
-        </field>
-      </fields>
-      <functions></functions>
-    </entity>
-    <entity>
-      <name>Communitypoi</name>
-      <namelow>communitypoi</namelow>
-      <table>community_poi_relative</table>
+      <table>f_stage</table>
+      <operate>form,table</operate>		<!-- 是否要进行页面项 -->
+      <primarykey>
+	      <name>gid</name>
+          <auto>true</auto>
+      </primarykey>
       <fields>
       	<field>
-          <name>id</name>
-          <nameupper>Id</nameupper>
+          <name>xydm</name>
+          <nameupper>Xydm</nameupper>
           <dbtype>VARCHAR</dbtype>
-          <javatype>String</javatype>
-        </field>
-        <field>
-          <name>gps_x</name>
-          <nameupper>Gps_x</nameupper>
-          <dbtype>NUMERIC</dbtype>
-          <javatype>double</javatype>
-        </field>
-        <field>
-          <name>gps_y</name>
-          <nameupper>Gps_y</nameupper>
-          <dbtype>NUMERIC</dbtype>
-          <javatype>double</javatype>
-        </field>
-        <field>
-          <name>type</name>
-          <nameupper>Type</nameupper>
-          <dbtype>VARCHAR</dbtype>
-          <javatype>String</javatype>
-        </field>
-        <field>
-          <name>distance</name>
-          <nameupper>Distance</nameupper>
-          <dbtype>NUMERIC</dbtype>
-          <javatype>double</javatype>
-        </field>
-        <field>
-          <name>xqid</name>
-          <nameupper>Xqid</nameupper>
-          <dbtype>NUMERIC</dbtype>
-          <javatype>double</javatype>
-        </field>
-        <field>
-          <name>projectid</name>
-          <nameupper>Projectid</nameupper>
-          <dbtype>VARCHAR</dbtype>
-          <javatype>String</javatype>
+          <javatype>java.lang.String</javatype>
+          <search>true</search>				<!-- 是否作为模糊查询的条件 -->
+          <operate>form,table</operate>		<!-- 是否要进行页面项 -->
         </field>
       </fields>
-      <functions></functions>
+      <functions>
+      	<function>
+      		<name>findStageList</name>
+      		<paramtype>HashMap&lt;String,Object&gt;</paramtype>
+      		<dbparamtype>java.util.HashMap</dbparamtype>
+      		<paramname>item</paramname>
+      		<result>List&lt;HashMap&lt;String,Object&gt;&gt;</result>
+      	</function>
+      </functions>
     </entity>
   </entities>
 </project>

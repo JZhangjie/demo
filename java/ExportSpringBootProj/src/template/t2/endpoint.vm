@@ -70,7 +70,7 @@ public class ${entity_name}Controller{
 		map.put("data", pageInfo.getList());
 		return map;
 	}
-		/**
+	/**
 	 * 获取所有
 	 * 
 	 * @param 
@@ -78,14 +78,14 @@ public class ${entity_name}Controller{
 	 * @throws SQLException
 	 * @throws IOException
 	 */
-	@RequestMapping(value = "/findAll", method = RequestMethod.GET)
+	@RequestMapping(value = "/findAll", method = RequestMethod.POST)
 	@ResponseBody
 	@CrossOrigin
-	public List<${entity_name}> findAll() throws SQLException, IOException {
+	public List<${entity_name}> findAll(${entity_name} item) throws SQLException, IOException {
 
 		List<${entity_name}> list = new ArrayList<${entity_name}>();
 
-		list = ${entity_name_low}Service.findList(null);
+		list = ${entity_name_low}Service.findList(item);
 
 		return list;
 	}
@@ -175,6 +175,23 @@ public class ${entity_name}Controller{
 			e.printStackTrace();
 			return 0;
 		}
+	}
+	
+	/**
+	 * 按条件删除
+	 * 
+	 * @param mp
+	 */
+	@RequestMapping(value = "/deleteByCondition", method = RequestMethod.POST)
+	@ResponseBody
+	@CrossOrigin
+	public int deleteByCondition(@RequestBody ${entity_name} item) throws SQLException, IOException {
+		try {
+			return ${entity_name_low}Service.deleteByCondition(item);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return 0;
 	}
 
 }

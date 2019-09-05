@@ -1,21 +1,8 @@
 package test.demo;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
-
-import org.apache.velocity.Template;
-import org.apache.velocity.VelocityContext;
-import org.apache.velocity.app.Velocity;
-import org.apache.velocity.app.VelocityEngine;
-import org.apache.velocity.runtime.RuntimeConstants;
-import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
+import java.util.regex.Pattern;
 
 import test.demo.entityxml.Entity;
 import test.demo.entityxml.Project;
@@ -25,11 +12,16 @@ import test.demo.entityxml.Project;
  */
 public class App 
 {
+
     public static void main( String[] args )
     {
     	String templateDir = System.getProperty("user.dir")+"\\src\\template\\t2";
     	String xmlpath = System.getProperty("user.dir")+"\\src\\xml\\wfjsjg_p1.xml";
-    	
+    	String REGEX = "fo";
+        String INPUT = "fooooooooooooooooo";
+    	Pattern pattern = Pattern.compile(REGEX);
+    	boolean a =  pattern.matcher(INPUT).find();
+  
     	workOnXmlAndDB( templateDir, xmlpath);
     }
     
@@ -53,8 +45,12 @@ public class App
 		if(tablenams==null) {
 			tablenams = tablesfromdb;
 		}
+		String filter = project.getTablefilter();
 		for (String table : tablenams) {
-			if(ntables.contains(table)) {
+			if(filter!=null && !filter.equals("") && !Pattern.compile(filter).matcher(table).find()) {
+				continue;
+			}
+			if(ntables!=null && ntables.contains(table)) {
 				continue;
 			}
 			Entity entity = new Entity();

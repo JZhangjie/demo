@@ -31,6 +31,10 @@ public class ${entity_name}Service{
 		return ${entity_name_low}Mapper.findList(${entity_name_low});
 	}
 	
+	public ${entity_name} findByKey(${entity_key.javatype} ${entity_key.name}){
+		return ${entity_name_low}Mapper.findByKey(${entity_key.name});
+	}
+	
 	public int insertSelective(${entity_name} ${entity_name_low}){
 #if(!${entity_key.auto})
 		${entity_key.javatype} kv= this.getUniqueKey();
@@ -43,18 +47,18 @@ public class ${entity_name}Service{
 		return ${entity_name_low}Mapper.deleteByKey(${entity_key.name});
 	}
 	
-	public int updateByKey(${entity_name} ${entity_name_low}){
-		return ${entity_name_low}Mapper.updateByKey(${entity_name_low});
-	}
-	
-	public ${entity_name} findByKey(${entity_key.javatype} ${entity_key.name}){
-		return ${entity_name_low}Mapper.findByKey(${entity_key.name});
-	}
-	
 	public int deleteInBatch(List<${entity_key.javatype}> ${entity_key.name}s){
 		return ${entity_name_low}Mapper.deleteInBatch(${entity_key.name}s);
 	}
 	
+	public int deleteByCondition(${entity_name} ${entity_name_low}){
+		return ${entity_name_low}Mapper.deleteByCondition(${entity_name_low});
+	}
+	
+	public int updateByKey(${entity_name} ${entity_name_low}){
+		return ${entity_name_low}Mapper.updateByKey(${entity_name_low});
+	}
+
 #if(!${entity_key.auto})
 	public ${entity_key.javatype} getUniqueKey(){
 		return UUID.randomUUID().toString();

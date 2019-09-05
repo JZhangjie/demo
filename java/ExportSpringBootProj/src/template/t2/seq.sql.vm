@@ -1,0 +1,10 @@
+#foreach ($entity in $entities) 
+	----${entity.table}----
+	CREATE SEQUENCE ${entity.table}_gid_seq 
+	START WITH 1  
+	INCREMENT BY 1  
+	NO MINVALUE  
+	NO MAXVALUE  
+	CACHE 1;  
+	alter table ${entity.table} alter column ${entity.primarykey.name} set default nextval('${entity.table}_gid_seq');
+#end 

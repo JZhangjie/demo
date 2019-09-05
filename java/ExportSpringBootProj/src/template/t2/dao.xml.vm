@@ -12,6 +12,21 @@
 	<!-- 输出结构定义 -->
 	<sql id="Base_Column_List">#foreach ($attr in $entity_attrs)${attr.name}#if($velocityCount != $entity_attrs.size()),#end#end</sql>
 
+	<!-- 补充sql -->
+#foreach ($function in $entity_functions)
+	<select id="${function.name}" parameterType="${function.dbparamtype}" resultType="java.util.HashMap">
+		select *
+		from ${entity_table}
+		<trim prefix="where" prefixOverrides="and|or">
+#foreach ($attr in $entity_attrs) 
+			<if test="${attr.name} !='' and ${attr.name} != null">
+				and ${attr.name} = #{${attr.name},jdbcType=${attr.dbtype}}
+			</if>
+#end
+     	</trim>
+	</select>
+#end 
+
 	<!-- 查找列表 -->
 	<select id="findList" parameterType="${root_package_name}.entity.${entity_name}" resultMap="BaseResultMap">
 		select 
@@ -35,21 +50,14 @@
 		</if>
 	</select>
 	
-	<!-- 补充sql -->
-#foreach ($function in $entity_functions)
-	<select id="${function.name}" parameterType="${function.paramtype}" resultType="java.util.HashMap">
-		select *
-		from ${entity_table}
-		<trim prefix="where" prefixOverrides="and|or">
-#foreach ($attr in $entity_attrs) 
-			<if test="${attr.name} !='' and ${attr.name} != null">
-				and ${attr.name} = #{${attr.name},jdbcType=${attr.dbtype}}
-			</if>
-#end
-     	</trim>
+	<!-- 依据id查找 -->
+	<select id="findByKey" parameterType="${entity_key.javatype}" resultMap="BaseResultMap">
+		select 
+			<include refid="Base_Column_List"></include>
+			from ${entity_table}
+    	where ${entity_key.name}=#{${entity_key.name},jdbcType=${entity_key.dbtype}}
 	</select>
-#end 
-	
+		
 	<!-- 添加 -->
 	<insert id="insertSelective" #if(${entity_key.auto}) useGeneratedKeys="true" keyProperty="${entity_key.name}" #end parameterType="${root_package_name}.entity.${entity_name}">
 		insert into ${entity_table} 
@@ -71,7 +79,7 @@
 	</insert>
 	
 	<!-- 删除 -->
-	<delete id="deleteByKey" parameterType="String">
+	<delete id="deleteByKey" parameterType="${entity_key.javatype}">
 		delete from ${entity_table}
 		where ${entity_key.name} = #{${entity_key.name},jdbcType=${entity_key.dbtype}}
 	</delete>
@@ -83,6 +91,18 @@
 		<foreach collection="list" item="id" open="(" close=")" separator="," >
 	         #{id,jdbcType=${entity_key.dbtype}}
 	    </foreach>
+	</delete>
+	
+	<!-- 条件删除 -->
+	<delete id="deleteByCondition" parameterType="${root_package_name}.entity.${entity_name}">
+		delete from ${entity_table}
+		<trim prefix="where" prefixOverrides="and|or">
+#foreach ($attr in $entity_attrs) 
+			<if test="${attr.name} !='' and ${attr.name} != null">
+				and ${attr.name} = #{${attr.name},jdbcType=${attr.dbtype}}
+			</if>
+#end
+     	</trim>
 	</delete>
 
 	<!-- 修改 -->
@@ -99,13 +119,5 @@
 		</trim>
 		where ${entity_key.name} = #{${entity_key.name},jdbcType=${entity_key.dbtype}}
 	</update>
-	
-	<!-- 依据id查找 -->
-	<select id="findByKey" parameterType="String" resultMap="BaseResultMap">
-		select 
-			<include refid="Base_Column_List"></include>
-			from ${entity_table}
-    	where ${entity_key.name}=#{${entity_key.name},jdbcType=${entity_key.dbtype}}
-	</select>
 	
 </mapper>

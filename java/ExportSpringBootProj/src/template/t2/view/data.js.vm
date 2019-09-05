@@ -1,0 +1,112 @@
+(function(win) {
+   var apihost = typeof APIHOST != "undefined" && APIHOST ? APIHOST : "http://localhost:8088/api/";
+   var store = {
+      urls: {
+         add: apihost + "/${entity.namelow}/add",
+         findbykey: apihost + "/${entity.namelow}/findByKey",
+         findlist: apihost + "/${entity.namelow}/findList",
+         findall:apihost + "/${entity.namelow}/findAll",
+         update: apihost + "/${entity.namelow}/update",
+         delete: apihost + "/${entity.namelow}/delete"
+      }
+   };
+   
+   store.exportTable = function (tableconfigid){
+		layer.load("导出中...");
+		$.ajax({
+			url: store.urls.findall,
+			contentType:'application/json',
+			dataType:'json',
+			success: function (data) {
+				table.exportFile(tableconfigid,data,'xls');
+				layer.closeAll();
+			},
+			error: function (error) {
+				layer.closeAll();
+			}
+		})
+	}
+   
+   store.addItem = function(item, successed) {
+      var url = store.urls.add;
+      $.ajax({
+         type: "post",
+         url: url,
+         contentType: 'application/json',
+         dataType: 'json',
+         data: JSON.stringify(item),
+         success: function(data) {
+            if (successed) {
+               successed(data);
+            }
+         },
+         error: function(error) {}
+      })
+   };
+   store.getItem = function(id, successed) {
+      var url = store.urls.findbykey + "?${entity.primarykey.name}=" + id;
+      $.ajax({
+         type: "get",
+         url: url,
+         dataType: 'json',
+         success: function(data) {
+            if (successed) {
+               successed(data);
+            }
+         },
+         error: function(error) {}
+      })
+   }
+   store.getItems = function(item, successed) {
+      var url = store.urls.findlist;
+      $.ajax({
+         type: "post",
+         url: url,
+         contentType: 'application/json',
+         dataType: 'json',
+         data: JSON.stringify(item),
+         success: function(data) {
+            if (successed) {
+               successed(data);
+            }
+         },
+         error: function(error) {}
+      })
+   }
+   store.deleteItems = function(items, successed) {
+      var url = store.urls.delete;
+      $.ajax({
+         type: "post",
+         url: url,
+         contentType: 'application/json',
+         dataType: 'json',
+         data: JSON.stringify(items.map(item => item.gid)),
+         success: function(data) {
+            if (successed) {
+               successed(data);
+            }
+         },
+         error: function(error) {}
+      })
+   }
+
+   store.updateItem = function(item, successed) {
+      var url = store.urls.update;
+      $.ajax({
+         type: "post",
+         url: url,
+         contentType: 'application/json',
+         dataType: 'json',
+         data: JSON.stringify(item),
+         success: function(data) {
+            if (successed) {
+               successed(data);
+            }
+         },
+         error: function(error) {}
+      })
+   }
+
+   win.store = store;
+   return store;
+})(window)

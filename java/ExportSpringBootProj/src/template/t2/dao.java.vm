@@ -16,14 +16,16 @@ public interface ${entity_name}Mapper {
 
 	public List<${entity_name}> findList(${entity_name} ${entity_name_low});
 	
+	public ${entity_name} findByKey(${entity_key.javatype} ${entity_key.name});
+	
 	public int insertSelective(${entity_name} ${entity_name_low});
 	
 	public int deleteByKey(${entity_key.javatype} ${entity_key.name});
 	
-	public int updateByKey(${entity_name} ${entity_name_low});
-	
-	public ${entity_name} findByKey(${entity_key.javatype} ${entity_key.name});
+	public int deleteByCondition(${entity_name} ${entity_name_low});
 	
 	public int deleteInBatch(List<${entity_key.javatype}> ${entity_key.name}s);
+	
+	public int updateByKey(${entity_name} ${entity_name_low});
 	
 }

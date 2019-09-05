@@ -1,6 +1,8 @@
 
 package test.demo.entityxml;
 
+import java.util.List;
+
 import javax.xml.bind.annotation.*;
 
 
@@ -19,6 +21,12 @@ public class Field {
     protected boolean auto;
     @XmlElement(name = "search")
     protected boolean search;
+    @XmlElement(name = "operate")
+    protected String operate;    //操作类型  table:列表显示  form:表单显示
+    @XmlElement(name = "operatetype")
+    protected String operatetype;    
+    @XmlElement(name = "label")
+    protected String label;    
 
     public String getName() {
         return name;
@@ -76,6 +84,33 @@ public class Field {
 		this.search = search;
 	}
 
+
+	public String getOperate() {
+		return operate;
+	}
+
+
+	public void setOperate(String operate) {
+		this.operate = operate;
+	}
+	
+	public String getOperatetype() {
+		return operatetype;
+	}
+
+
+	public void setOperatetype(String operatetype) {
+		this.operatetype = operatetype;
+	}
+
+	public String getLabel() {
+		return label;
+	}
+
+
+	public void setLabel(String label) {
+		this.label = label;
+	}
 
 	@Override
 	public boolean equals(Object obj) {

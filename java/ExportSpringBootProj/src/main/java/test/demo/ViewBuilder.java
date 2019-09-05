@@ -5,12 +5,12 @@ import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
 import org.apache.velocity.app.VelocityEngine;
 import test.demo.entityxml.Entity;
+import test.demo.entityxml.Field;
 import test.demo.entityxml.Project;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -20,12 +20,14 @@ import java.util.stream.Collectors;
 
 import javax.lang.model.element.VariableElement;
 
-public  class EntityBuilder {
-	String templateDir = System.getProperty("user.dir")+"\\src\\template";
+public  class ViewBuilder {
+	String templateDir = System.getProperty("user.dir")+"\\src\\template\\t2\\view";
 	String rootPath = null;
 	
-	public EntityBuilder(String templateDir,String rootPath) {
-		this.templateDir = templateDir;
+	public ViewBuilder(String templateDir,String rootPath) {
+		if(templateDir!=null) {
+			this.templateDir =templateDir;
+		}
 		this.rootPath = rootPath;
 	}
 	
@@ -38,7 +40,7 @@ public  class EntityBuilder {
 	}
 	
 	private void buildFiles(Project project, Entity entity) {
-        System.out.println( "开始构建业务类==》"+entity.getName() );
+        System.out.println( "开始构建页面==》"+entity.getName() );
         Properties pro = new Properties();
         pro.setProperty(Velocity.INPUT_ENCODING, "UTF-8");
         pro.setProperty(Velocity.FILE_RESOURCE_LOADER_PATH, templateDir);
@@ -46,32 +48,27 @@ public  class EntityBuilder {
         velocityEngine.init(); 
         
         VelocityContext ctx = buildContext(project,entity);
-        String rootPath = this.buildPath(project);
+        String operate = entity.getOperate();
+        Template actionTpt5 = velocityEngine.getTemplate("data.js.vm","UTF-8"); 
+        outFile(actionTpt5,ctx,makeDir(this.rootPath+"/"+entity.getNamelow()+"/"),     "data.js");
         
-        Template actionTpt = velocityEngine.getTemplate("dao.xml.vm","UTF-8"); 
-        Template actionTpt2 = velocityEngine.getTemplate("dao.java.vm","UTF-8"); 
-        Template actionTpt3 = velocityEngine.getTemplate("entity.vm","UTF-8"); 
-        Template actionTpt4 = velocityEngine.getTemplate("service.vm","UTF-8"); 
-        Template actionTpt5 = velocityEngine.getTemplate("endpoint.vm","UTF-8"); 
-        
-        outFile(actionTpt,ctx, makeDir(rootPath+"/dao/"),     entity.getName()+"Mapper.xml");
-        outFile(actionTpt2,ctx,makeDir(rootPath+"/dao/"),     entity.getName()+"Mapper.java");
-        outFile(actionTpt3,ctx,makeDir(rootPath+"/entity/"),  entity.getName()+".java");
-        outFile(actionTpt4,ctx,makeDir(rootPath+"/service/"), entity.getName()+"Service.java");
-        outFile(actionTpt5,ctx,makeDir(rootPath+"/endpoint/"),entity.getName()+"Controller.java");
-        System.out.println( "业务类构建完成==》"+entity.getName() );
+        if(operate!=null) {
+        	if(operate.contains("form")) {
+                Template actionTpt = velocityEngine.getTemplate("detail.html.vm","UTF-8"); 
+                Template actionTpt2 = velocityEngine.getTemplate("detail.js.vm","UTF-8"); 
+                outFile(actionTpt,ctx, makeDir(this.rootPath+"/"+entity.getNamelow()+"/"),     "detail.html");
+                outFile(actionTpt2,ctx,makeDir(this.rootPath+"/"+entity.getNamelow()+"/"),     "detail.js");
+        	}
+        	if(operate.contains("table")) {
+            	Template actionTpt3 = velocityEngine.getTemplate("list.html.vm","UTF-8"); 
+                Template actionTpt4 = velocityEngine.getTemplate("list.js.vm","UTF-8"); 
+                outFile(actionTpt3,ctx, makeDir(this.rootPath+"/"+entity.getNamelow()+"/"),     "list.html");
+                outFile(actionTpt4,ctx,makeDir(this.rootPath+"/"+entity.getNamelow()+"/"),     "list.js");
+            }
+
+        }
+        System.out.println( "页面构建完成==》"+entity.getName() );
     }
-	
-	//构造包路径
-	private String buildPath(Project project) {
-		String temppath = this.rootPath+"/src/main/java";
-		String pname = project.getPackagename();
-		String[] pStrings = pname.split("\\.");
-		for (String p : pStrings) {
-			temppath = temppath+"/"+p;
-		}
-		return temppath;
-	}
 	
 	/*
 	 * 使用Entity构建VelocityContext对象
@@ -85,14 +82,23 @@ public  class EntityBuilder {
 			}
 		}
         VelocityContext ctx = new VelocityContext(); 
-        ctx.put("root_package_name", project.getPackagename());
-        ctx.put("entity_name", entity.getName());
-        ctx.put("entity_name_low", entity.getNamelow());
-        ctx.put("entity_table", entity.getTable());
-        ctx.put("entity_attrs", entity.getFields());
-        ctx.put("entity_attrs_forsearch", entity_attrs_forsearch);
-        ctx.put("entity_functions", entity.getFunctions());
-        ctx.put("entity_key", entity.getPrimarykey()); 
+        ctx.put("project", project);
+        ctx.put("entity", entity);
+        List<Field> formFields= new ArrayList<>();
+        List<Field> tableFields= new ArrayList<>();
+        if(entity.getFields()!=null) {
+        	for (Field field : entity.getFields()) {
+        		String operate = field.getOperate();
+        		if(operate!=null && operate.contains("table")) {
+        			tableFields.add(field);
+                }
+        		if(operate!=null && operate.contains("form")) {
+        			formFields.add(field);
+                }
+			}
+        }
+        ctx.put("formFields", formFields);
+        ctx.put("tableFields", tableFields);
         return ctx;
 	}
 	

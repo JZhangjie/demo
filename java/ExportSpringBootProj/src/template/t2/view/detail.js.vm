@@ -1,0 +1,123 @@
+layui.use(['table','layer','laydate'], function() {
+	var table = layui.table;
+	var layer = layui.layer;
+	var laydate = layui.laydate;
+   
+	var status = parseInt(getQueryVariable("status")); //0:查看/选择 1:新增 2:修改
+   var currentItem={tempid:1};
+   
+	initView();
+	initEvent()
+	
+	function initView(){
+		//时间控件初始化
+#foreach ($field in $formFields)
+#if($field.operatetype=='date')
+		laydate.render({
+			elem: '#${field.name}',
+			type:'date'
+		  });
+#end
+#if($field.operatetype=='time')
+		laydate.render({
+			elem: '#${field.name}',
+			type:'datetime'
+		  });
+#end
+#end
+		if(status==0){
+			$("#save_btn").hide();
+		}
+		initData();
+	}
+	
+	function initEvent(){
+		$("#back_btn").click(function(e){
+		});
+		$("#save_btn").click(function(e){
+         saveItem(getForm(currentItem));
+		});
+	}
+	
+   //初始化数据，status=1时直接构建新对象
+	function initData() {
+      switch (status){
+         case 1:
+#foreach ($field in $formFields)
+#if($field.operatetype=='string' || $field.operatetype=='text')
+			currentItem.${field.name}="";
+#end
+#if($field.operatetype=='time')
+			currentItem.${field.name}=new Date().format("yyyy-MM-dd hh:mm:ss");
+#end
+#if($field.operatetype=='date')
+			currentItem.${field.name}=new Date().format("yyyy-MM-dd");
+#end
+#end
+            fetchForm(currentItem);
+            break;
+         default:
+            store.getItem(currentItem.tempid,function(d){
+               currentItem=d;
+               fetchForm(currentItem);
+            });
+            break;
+      }
+	}
+   
+   function saveItem(item){
+      switch (status){
+         case 1:
+         	layer.load("新增中...");
+            store.addItem(item,function(d){
+               currentItem.${entity.primarykey.name}=d;
+               status=2;
+               initData();
+               layer.closeAll();
+            });
+            break;
+         case 2:
+         	layer.load("更新中...");
+            store.updateItem(item,function(d){
+               initData();
+               layer.closeAll();
+            });
+            break;
+         default:
+            break;
+      }
+   }
+   
+	function fetchForm(item){
+#foreach ($field in $formFields)
+#if($field.operatetype=='string' || $field.operatetype=='text')
+		$("#${field.name}").val(item.${field.name}?item.${field.name}:"");
+#end
+#if($field.operatetype=='date')
+		laydate.render({
+			elem: '#${field.name}',
+			type:'date',
+			value:item.${field.name}?item.${field.name}:""
+		  });
+#end
+#if($field.operatetype=='time')
+		laydate.render({
+			elem: '#${field.name}',
+			type:'datetime',
+			value:item.${field.name}?item.${field.name}:""
+		  });
+#end
+#end
+	}
+	
+	function getForm(item){
+#foreach ($field in $formFields)
+#if($field.operatetype=='string' || $field.operatetype=='text')
+		if($("#${field.name}").val()){
+			item.${field.name} = $("#${field.name}").val();
+		}
+#end
+#end
+		return item;
+	}
+});

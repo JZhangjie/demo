@@ -35,6 +35,8 @@ public class Project {
     protected String dbpassword;
     @XmlElement(name="tables")
     protected String tables;
+    @XmlElement(name="tablefilter")
+    protected String tablefilter;
     protected List<String> tablelist;
     @XmlElement(name="ignoretables")
     protected String ignoretables;
@@ -169,4 +171,12 @@ public class Project {
 		return this.ignoretablelist;
 	}
 
+	public String getTablefilter() {
+		return tablefilter;
+	}
+
+	public void setTablefilter(String tablefilter) {
+		this.tablefilter = tablefilter;
+	}
+	
 }

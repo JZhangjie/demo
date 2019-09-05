@@ -18,6 +18,10 @@ public class ProjectBuilder {
 	String templateDir = System.getProperty("user.dir")+"\\src\\template";
 	private String template="";
 	private String rootPath="";
+	private String projectPath="";
+	private String packagePath="";
+	private String viewPath="";
+	private String sqlPath="";
 	private Project project;
 	
 	public ProjectBuilder() {
@@ -36,6 +40,11 @@ public class ProjectBuilder {
 		System.out.println( "template位置"+templateDir);
 		this.rootPath = project.getProjectpath();
 		this.project = project;
+        this.projectPath = this.rootPath+"/project";
+        this.packagePath = this.buildPath(this.projectPath+"/src/main/java",this.project.getPackagename());
+        this.viewPath = this.rootPath+"/view";
+        this.sqlPath = this.rootPath+"/sql";
+        
 		this.buildProject();
 		return true;
 	}
@@ -51,10 +60,14 @@ public class ProjectBuilder {
 		
 		//构造业务类
 		List<Entity> entities= this.project.getEntities();
-		EntityBuilder entityBuilder = new EntityBuilder(this.templateDir);
+		EntityBuilder entityBuilder = new EntityBuilder(this.templateDir,this.projectPath);
+		ViewBuilder viewBuilder = new ViewBuilder(null,this.viewPath);
 		if(entities!=null && entities.size()>0){
 			for (Entity entity:entities) {
 				entityBuilder.build(project,entity);
+				if(entity.getOperate()!=null && entity.getOperate()!="") {
+					viewBuilder.build(project, entity);
+				}
 			}
 		}
 	}
@@ -68,19 +81,20 @@ public class ProjectBuilder {
         velocityEngine.init(); 
         
         VelocityContext ctx = buildContext(this.project);
-        String packagepath = this.buildPath(this.rootPath+"/src/main/java",this.project.getPackagename());
         
         Template actionTpt = velocityEngine.getTemplate("pom.xml.vm","UTF-8"); 
         Template actionTpt2 = velocityEngine.getTemplate("application.properties.vm","UTF-8"); 
         Template actionTpt3 = velocityEngine.getTemplate("SpringBootStartApplication.java.vm","UTF-8"); 
         Template actionTpt4 = velocityEngine.getTemplate("TomcatStartApplication.java.vm","UTF-8"); 
         Template actionTpt5 = velocityEngine.getTemplate("MybatisConf.java.vm","UTF-8"); 
+        Template actionTpt6 = velocityEngine.getTemplate("seq.sql.vm","UTF-8");
         
-        outFile(actionTpt,ctx, makeDir(this.rootPath),                         "pom.xml");
-        outFile(actionTpt2,ctx,makeDir(this.rootPath+"/src/main/resources"),   "application.properties"); 
-        outFile(actionTpt3,ctx,makeDir(packagepath),                           "SpringBootStartApplication.java"); 
-        outFile(actionTpt4,ctx,makeDir(packagepath),                           "TomcatStartApplication.java"); 
-        outFile(actionTpt5,ctx,makeDir(packagepath),                           "MybatisConf.java"); 
+        outFile(actionTpt,ctx, makeDir(this.projectPath),                         "pom.xml");
+        outFile(actionTpt2,ctx,makeDir(this.projectPath+"/src/main/resources"),   "application.properties"); 
+        outFile(actionTpt3,ctx,makeDir(this.packagePath),                           "SpringBootStartApplication.java"); 
+        outFile(actionTpt4,ctx,makeDir(this.packagePath),                           "TomcatStartApplication.java"); 
+        outFile(actionTpt5,ctx,makeDir(this.packagePath),                           "MybatisConf.java"); 
+        outFile(actionTpt6,ctx, makeDir(this.sqlPath),                         "seq.sql");
         System.out.println( "项目文件新建完成>>>"+this.project.getName());
     }
 	
@@ -111,6 +125,7 @@ public class ProjectBuilder {
         ctx.put("dburl", project.getDburl()); 
         ctx.put("dbusername", project.getDbusername()); 
         ctx.put("dbpassword", project.getDbpassword()); 
+        ctx.put("entities", project.getEntities());
         
         return ctx;
 	}
