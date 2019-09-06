@@ -74,18 +74,13 @@ public  class ViewBuilder {
 	 * 使用Entity构建VelocityContext对象
 	 */
 	private VelocityContext buildContext(Project project,Entity entity) {
-		List<test.demo.entityxml.Field> entity_attrs_forsearch = new ArrayList<test.demo.entityxml.Field>();
-		for(int i=0;i<entity.getFields().size();i++) {
-			test.demo.entityxml.Field field = entity.getFields().get(i);
-			if(field.isSearch()) {
-				entity_attrs_forsearch.add(field);
-			}
-		}
+
         VelocityContext ctx = new VelocityContext(); 
         ctx.put("project", project);
         ctx.put("entity", entity);
         List<Field> formFields= new ArrayList<>();
         List<Field> tableFields= new ArrayList<>();
+        List<Field> conditionFields= new ArrayList<>();
         if(entity.getFields()!=null) {
         	for (Field field : entity.getFields()) {
         		String operate = field.getOperate();
@@ -95,10 +90,14 @@ public  class ViewBuilder {
         		if(operate!=null && operate.contains("form")) {
         			formFields.add(field);
                 }
+        		if(operate!=null && operate.contains("condition")) {
+        			conditionFields.add(field);
+                }
 			}
         }
         ctx.put("formFields", formFields);
         ctx.put("tableFields", tableFields);
+        ctx.put("conditionFields", conditionFields);
         return ctx;
 	}
 	

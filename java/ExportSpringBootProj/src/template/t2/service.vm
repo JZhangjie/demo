@@ -25,8 +25,12 @@ public class ${entity_name}Service{
 	public ${function.result} ${function.name}(${function.paramtype} ${function.paramname}){
 		return ${entity_name_low}Mapper.${function.name}(${function.paramname});
 	}
-	
 #end
+
+	public List<HashMap<String,Object>> findByCondition(HashMap<String,Object> ${entity_name_low}){
+		return ${entity_name_low}Mapper.findByCondition(${entity_name_low});
+	}
+	
 	public List<${entity_name}> findList(${entity_name} ${entity_name_low}){
 		return ${entity_name_low}Mapper.findList(${entity_name_low});
 	}

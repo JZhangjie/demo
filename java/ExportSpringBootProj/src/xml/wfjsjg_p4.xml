@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+  <name>WFJSJG_FCASE</name>
+  <projectpath>D:\work\workspace\GIT\ExportSpringBootProject</projectpath>
+  <packagename>com.wfjsjg.fcase</packagename>
+  <packagepath>com/wfjsjg/fcase</packagepath>
+  <packagetype>war</packagetype>
+  <description>fcase</description>
+  <dbdriver>org.postgresql.Driver</dbdriver>
+  <dburl>jdbc:postgresql://127.0.0.1:5432/wfjsjg</dburl>
+  <dbusername>postgres</dbusername>
+  <dbpassword>123456</dbpassword>
+  <tablefilter>^f_</tablefilter>
+  <tables>f_stage</tables>
+  <ignoretables></ignoretables>
+  <entities>
+    <entity>
+      <table>f_stage</table>
+      <operate>table,form</operate>
+      <primarykey>
+	      <name>gid</name>
+          <auto>true</auto>
+      </primarykey>
+      <fields>
+      	<field>
+          <name>name</name>
+          <search>true</search>
+          <operate>form,table</operate>    <!-- form,table,condition-->
+          <operatetype>string</operatetype> <!-- text date time string number select  date,time在condition条件查询中需要分成起始时间和终止时间-->
+          <label>名字</label>
+        </field>
+        <field>
+          <name>xydm</name>
+          <search>true</search>
+          <operate>form,table</operate>		<!-- form,table -->
+          <operatetype>text</operatetype> <!-- text date time string number -->
+          <label>备注</label>
+        </field>
+        <field>
+          <name>cctime</name>
+          <search>true</search>
+          <operate>form,table</operate>
+          <operatetype>time</operatetype> <!-- text date time string number -->
+          <label>采集时间</label>
+        </field>
+      </fields>
+      <functions>
+      	<function>
+      		<name>findStageList</name>
+      		<paramtype>HashMap&lt;String,Object&gt;</paramtype>
+      		<dbparamtype>java.util.HashMap</dbparamtype>
+      		<paramname>item</paramname>
+      		<result>List&lt;HashMap&lt;String,Object&gt;&gt;</result>
+      	</function>
+      </functions>
+    </entity>
+  </entities>
+</project>

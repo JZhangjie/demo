@@ -5,6 +5,7 @@
          add: apihost + "/${entity.namelow}/add",
          findbykey: apihost + "/${entity.namelow}/findByKey",
          findlist: apihost + "/${entity.namelow}/findList",
+         findByCondition:apihost + "/${entity.namelow}/findByCondition:apihost",
          findall:apihost + "/${entity.namelow}/findAll",
          update: apihost + "/${entity.namelow}/update",
          delete: apihost + "/${entity.namelow}/delete"

@@ -1,657 +1,988 @@
-2019-09-05 16:42:02,949 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:42:02,949 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:42:02,949 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:42:02,949 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:42:02,952 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:02,953 - Do unicode file recognition:  false
-2019-09-05 16:42:02,953 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
-2019-09-05 16:42:02,969 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:42:02,970 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:42:02,971 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:42:02,971 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:42:02,972 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:42:02,972 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:42:02,973 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:42:02,973 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:42:02,974 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:42:02,974 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:42:02,992 - Created '20' parsers.
-2019-09-05 16:42:02,995 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:42:02,995 - Velocimacro : Default library not found.
-2019-09-05 16:42:02,995 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:42:02,995 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:42:02,995 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:42:02,995 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:42:03,008 - ResourceManager : found pom.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,013 - ResourceManager : found application.properties.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,013 - ResourceManager : found SpringBootStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,014 - ResourceManager : found TomcatStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,015 - ResourceManager : found MybatisConf.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,022 - ResourceManager : found seq.sql.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,023 - Left side ($dbtype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. pom.xml.vm[line 47, column 15]
-2019-09-05 16:42:03,032 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:42:03,032 - Initializing Velocity, Calling init()...
-2019-09-05 16:42:03,032 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:42:03,032 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:42:03,032 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:42:03,032 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:42:03,032 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:42:03,032 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:42:03,032 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,032 - Do unicode file recognition:  false
-2019-09-05 16:42:03,032 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
-2019-09-05 16:42:03,032 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:42:03,033 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:42:03,033 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:42:03,033 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:42:03,033 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:42:03,033 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:42:03,033 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:42:03,033 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:42:03,033 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:42:03,033 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:42:03,034 - Created '20' parsers.
-2019-09-05 16:42:03,034 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:42:03,034 - Velocimacro : Default library not found.
-2019-09-05 16:42:03,034 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:42:03,034 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:42:03,034 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:42:03,034 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:42:03,083 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,095 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,103 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,125 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,147 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,148 - Null reference [template 'dao.xml.vm', line 8, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:42:03,148 - Null reference [template 'dao.xml.vm', line 8, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:42:03,154 - Null reference [template 'dao.xml.vm', line 23, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:42:03,154 - Null reference [template 'dao.xml.vm', line 23, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:42:03,154 - Null reference [template 'dao.xml.vm', line 38, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:42:03,154 - Null reference [template 'dao.xml.vm', line 38, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:42:03,155 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
-2019-09-05 16:42:03,155 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
-2019-09-05 16:42:03,155 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
-2019-09-05 16:42:03,155 - Null reference [template 'dao.xml.vm', line 75, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:42:03,155 - Null reference [template 'dao.xml.vm', line 75, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:42:03,155 - Null reference [template 'dao.xml.vm', line 102, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:42:03,155 - Null reference [template 'dao.xml.vm', line 102, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:42:03,156 - Null reference [template 'dao.xml.vm', line 115, column 80] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:42:03,156 - Null reference [template 'dao.xml.vm', line 115, column 80] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:42:03,157 - Null reference [template 'entity.vm', line 9, column 17] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:42:03,157 - Null reference [template 'entity.vm', line 9, column 17] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:42:03,157 - Null reference [template 'entity.vm', line 17, column 16] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:42:03,157 - Null reference [template 'entity.vm', line 17, column 36] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:42:03,158 - Null reference [template 'entity.vm', line 20, column 24] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:42:03,158 - Null reference [template 'entity.vm', line 20, column 42] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:42:03,158 - Null reference [template 'entity.vm', line 17, column 16] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:42:03,158 - Null reference [template 'entity.vm', line 17, column 36] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:42:03,158 - Null reference [template 'entity.vm', line 20, column 24] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:42:03,158 - Null reference [template 'entity.vm', line 20, column 42] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:42:03,161 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:42:03,161 - Initializing Velocity, Calling init()...
-2019-09-05 16:42:03,161 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:42:03,161 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:42:03,161 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:42:03,161 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:42:03,162 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:42:03,162 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:42:03,162 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,162 - Do unicode file recognition:  false
-2019-09-05 16:42:03,162 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
-2019-09-05 16:42:03,162 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:42:03,163 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:42:03,164 - Created '20' parsers.
-2019-09-05 16:42:03,164 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:42:03,164 - Velocimacro : Default library not found.
-2019-09-05 16:42:03,164 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:42:03,164 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:42:03,164 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:42:03,164 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:42:03,172 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,179 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,196 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,198 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,202 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-m Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:42:03,162 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:42:03,163 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:42:03,163 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:42:03,164 - Created '20' parsers.
-2019-09-05 16:42:03,164 - Created '20' parsers.
-2019-09-05 16:42:03,164 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:42:03,164 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:42:03,164 - Velocimacro : Default library not found.
-2019-09-05 16:42:03,164 - Velocimacro : Default library not found.
-2019-09-05 16:42:03,164 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:42:03,164 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:42:03,164 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:42:03,164 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:42:03,164 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:42:03,164 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:42:03,164 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:42:03,164 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:42:03,172 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,172 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,179 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,179 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,196 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,196 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,198 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,198 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,202 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:42:03,202 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,847 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:44:31,848 - Initializing Velocity, Calling init()...
-2019-09-05 16:44:31,848 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:44:31,848 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:44:31,848 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:44:31,848 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:44:31,848 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:44:31,848 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:44:31,851 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,851 - Do unicode file recognition:  false
-2019-09-05 16:44:31,851 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
-2019-09-05 16:44:31,858 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:44:31,859 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:44:31,860 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:44:31,860 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:44:31,861 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:44:31,861 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:44:31,862 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:44:31,862 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:44:31,863 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:44:31,864 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:44:31,882 - Created '20' parsers.
-2019-09-05 16:44:31,885 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:44:31,885 - Velocimacro : Default library not found.
-2019-09-05 16:44:31,885 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:44:31,885 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:44:31,885 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:44:31,885 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:44:31,896 - ResourceManager : found pom.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,902 - ResourceManager : found application.properties.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,903 - ResourceManager : found SpringBootStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,904 - ResourceManager : found TomcatStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,905 - ResourceManager : found MybatisConf.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,911 - ResourceManager : found seq.sql.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,913 - Left side ($dbtype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. pom.xml.vm[line 47, column 15]
-2019-09-05 16:44:31,921 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:44:31,921 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:44:31,921 - Initializing Velocity, Calling init()...
-2019-09-05 16:44:31,921 - Initializing Velocity, Calling init()...
-2019-09-05 16:44:31,921 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:44:31,921 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:44:31,921 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:44:31,921 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:44:31,921 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:44:31,921 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:44:31,921 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:44:31,921 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:44:31,921 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:44:31,921 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:44:31,921 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:44:31,921 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:44:31,921 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,921 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,921 - Do unicode file recognition:  false
-2019-09-05 16:44:31,921 - Do unicode file recognition:  false
-2019-09-05 16:44:31,921 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
-2019-09-05 16:44:31,921 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
-2019-09-05 16:44:31,921 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:44:31,921 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:44:31,921 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:44:31,921 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:44:31,922 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:44:31,923 - Created '20' parsers.
-2019-09-05 16:44:31,923 - Created '20' parsers.
-2019-09-05 16:44:31,923 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:44:31,923 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:44:31,923 - Velocimacro : Default library not found.
-2019-09-05 16:44:31,923 - Velocimacro : Default library not found.
-2019-09-05 16:44:31,923 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:44:31,923 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:44:31,923 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:44:31,923 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:44:31,923 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:44:31,923 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:44:31,923 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:44:31,923 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:44:31,969 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,969 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,981 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,981 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,989 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:31,989 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,011 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,011 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,032 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,032 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,033 - Null reference [template 'dao.xml.vm', line 8, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,033 - Null reference [template 'dao.xml.vm', line 8, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,033 - Null reference [template 'dao.xml.vm', line 8, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,033 - Null reference [template 'dao.xml.vm', line 8, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,039 - Null reference [template 'dao.xml.vm', line 23, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,039 - Null reference [template 'dao.xml.vm', line 23, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,039 - Null reference [template 'dao.xml.vm', line 23, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,039 - Null reference [template 'dao.xml.vm', line 23, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,040 - Null reference [template 'dao.xml.vm', line 38, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,040 - Null reference [template 'dao.xml.vm', line 38, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,040 - Null reference [template 'dao.xml.vm', line 38, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,040 - Null reference [template 'dao.xml.vm', line 38, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,040 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
-2019-09-05 16:44:32,040 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
-2019-09-05 16:44:32,040 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
-2019-09-05 16:44:32,040 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
-2019-09-05 16:44:32,040 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
-2019-09-05 16:44:32,040 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
-2019-09-05 16:44:32,041 - Null reference [template 'dao.xml.vm', line 75, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,041 - Null reference [template 'dao.xml.vm', line 75, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,041 - Null reference [template 'dao.xml.vm', line 75, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,041 - Null reference [template 'dao.xml.vm', line 75, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,041 - Null reference [template 'dao.xml.vm', line 102, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,041 - Null reference [template 'dao.xml.vm', line 102, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,041 - Null reference [template 'dao.xml.vm', line 102, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,041 - Null reference [template 'dao.xml.vm', line 102, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,041 - Null reference [template 'dao.xml.vm', line 115, column 80] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,041 - Null reference [template 'dao.xml.vm', line 115, column 80] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,041 - Null reference [template 'dao.xml.vm', line 115, column 80] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,041 - Null reference [template 'dao.xml.vm', line 115, column 80] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 9, column 17] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 9, column 17] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 9, column 17] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 9, column 17] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 17, column 16] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 17, column 16] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 17, column 36] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 17, column 36] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 20, column 24] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 20, column 24] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 20, column 42] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 20, column 42] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 17, column 16] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 17, column 16] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 17, column 36] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 17, column 36] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 20, column 24] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 20, column 24] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 20, column 42] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:44:32,043 - Null reference [template 'entity.vm', line 20, column 42] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:44:32,046 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:44:32,046 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:44:32,046 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:44:32,046 - Initializing Velocity, Calling init()...
-2019-09-05 16:44:32,046 - Initializing Velocity, Calling init()...
-2019-09-05 16:44:32,046 - Initializing Velocity, Calling init()...
-2019-09-05 16:44:32,047 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:44:32,047 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:44:32,047 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:44:32,047 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:44:32,047 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:44:32,047 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:44:32,047 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:44:32,047 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:44:32,047 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:44:32,047 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:44:32,047 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:44:32,047 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:44:32,047 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:44:32,047 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:44:32,047 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:44:32,047 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:44:32,047 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:44:32,047 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:44:32,047 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,047 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,047 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,047 - Do unicode file recognition:  false
-2019-09-05 16:44:32,047 - Do unicode file recognition:  false
-2019-09-05 16:44:32,047 - Do unicode file recognition:  false
-2019-09-05 16:44:32,047 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
-2019-09-05 16:44:32,047 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
-2019-09-05 16:44:32,047 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
-2019-09-05 16:44:32,047 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:44:32,047 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:44:32,047 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:44:32,047 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:44:32,048 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:44:32,048 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:44:32,048 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:44:32,048 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:44:32,048 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:44:32,048 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:44:32,048 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:44:32,048 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:44:32,048 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:44:32,048 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:44:32,048 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:44:32,048 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:44:32,049 - Created '20' parsers.
-2019-09-05 16:44:32,049 - Created '20' parsers.
-2019-09-05 16:44:32,049 - Created '20' parsers.
-2019-09-05 16:44:32,049 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:44:32,049 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:44:32,049 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:44:32,049 - Velocimacro : Default library not found.
-2019-09-05 16:44:32,049 - Velocimacro : Default library not found.
-2019-09-05 16:44:32,049 - Velocimacro : Default library not found.
-2019-09-05 16:44:32,049 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:44:32,049 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:44:32,049 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:44:32,049 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:44:32,049 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:44:32,049 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:44:32,049 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:44:32,049 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:44:32,049 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:44:32,049 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:44:32,049 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:44:32,049 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:44:32,055 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,055 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,055 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,062 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,062 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,062 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,079 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,079 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,079 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,081 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,081 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,081 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,085 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,085 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:44:32,085 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,445 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:51:37,446 - Initializing Velocity, Calling init()...
-2019-09-05 16:51:37,446 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:51:37,446 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:51:37,446 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:51:37,446 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:51:37,446 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:51:37,446 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:51:37,449 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,449 - Do unicode file recognition:  false
-2019-09-05 16:51:37,449 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
-2019-09-05 16:51:37,457 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:51:37,458 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:51:37,459 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:51:37,459 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:51:37,460 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:51:37,460 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:51:37,461 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:51:37,462 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:51:37,462 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:51:37,463 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:51:37,483 - Created '20' parsers.
-2019-09-05 16:51:37,488 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:51:37,488 - Velocimacro : Default library not found.
-2019-09-05 16:51:37,488 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:51:37,488 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:51:37,488 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:51:37,488 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:51:37,502 - ResourceManager : found pom.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,507 - ResourceManager : found application.properties.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,508 - ResourceManager : found SpringBootStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,509 - ResourceManager : found TomcatStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,510 - ResourceManager : found MybatisConf.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,515 - ResourceManager : found seq.sql.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,517 - Left side ($dbtype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. pom.xml.vm[line 47, column 15]
-2019-09-05 16:51:37,526 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:51:37,526 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:51:37,526 - Initializing Velocity, Calling init()...
-2019-09-05 16:51:37,526 - Initializing Velocity, Calling init()...
-2019-09-05 16:51:37,526 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:51:37,526 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:51:37,526 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:51:37,526 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:51:37,526 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:51:37,526 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:51:37,526 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:51:37,526 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:51:37,526 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:51:37,526 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:51:37,526 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:51:37,526 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:51:37,526 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,526 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,526 - Do unicode file recognition:  false
-2019-09-05 16:51:37,526 - Do unicode file recognition:  false
-2019-09-05 16:51:37,526 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
-2019-09-05 16:51:37,526 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
-2019-09-05 16:51:37,526 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:51:37,526 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:51:37,526 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:51:37,526 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:51:37,527 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:51:37,528 - Created '20' parsers.
-2019-09-05 16:51:37,528 - Created '20' parsers.
-2019-09-05 16:51:37,528 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:51:37,528 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:51:37,528 - Velocimacro : Default library not found.
-2019-09-05 16:51:37,528 - Velocimacro : Default library not found.
-2019-09-05 16:51:37,528 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:51:37,528 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:51:37,528 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:51:37,528 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:51:37,528 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:51:37,528 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:51:37,528 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:51:37,528 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:51:37,577 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,577 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,588 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,588 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,597 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,597 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,619 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,619 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,642 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,642 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,643 - Null reference [template 'dao.xml.vm', line 8, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,643 - Null reference [template 'dao.xml.vm', line 8, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,643 - Null reference [template 'dao.xml.vm', line 8, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,643 - Null reference [template 'dao.xml.vm', line 8, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,649 - Null reference [template 'dao.xml.vm', line 23, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,649 - Null reference [template 'dao.xml.vm', line 23, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,649 - Null reference [template 'dao.xml.vm', line 23, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,649 - Null reference [template 'dao.xml.vm', line 23, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,650 - Null reference [template 'dao.xml.vm', line 38, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,650 - Null reference [template 'dao.xml.vm', line 38, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,650 - Null reference [template 'dao.xml.vm', line 38, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,650 - Null reference [template 'dao.xml.vm', line 38, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,650 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
-2019-09-05 16:51:37,650 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
-2019-09-05 16:51:37,650 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
-2019-09-05 16:51:37,650 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
-2019-09-05 16:51:37,650 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
-2019-09-05 16:51:37,650 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
-2019-09-05 16:51:37,650 - Null reference [template 'dao.xml.vm', line 75, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,650 - Null reference [template 'dao.xml.vm', line 75, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,650 - Null reference [template 'dao.xml.vm', line 75, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,650 - Null reference [template 'dao.xml.vm', line 75, column 57] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,650 - Null reference [template 'dao.xml.vm', line 102, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,650 - Null reference [template 'dao.xml.vm', line 102, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,651 - Null reference [template 'dao.xml.vm', line 102, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,651 - Null reference [template 'dao.xml.vm', line 102, column 76] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,651 - Null reference [template 'dao.xml.vm', line 115, column 80] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,651 - Null reference [template 'dao.xml.vm', line 115, column 80] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,651 - Null reference [template 'dao.xml.vm', line 115, column 80] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,651 - Null reference [template 'dao.xml.vm', line 115, column 80] : ${attr.dbtype} cannot be resolved.
-2019-09-05 16:51:37,652 - Null reference [template 'entity.vm', line 9, column 17] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:51:37,652 - Null reference [template 'entity.vm', line 9, column 17] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:51:37,652 - Null reference [template 'entity.vm', line 9, column 17] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:51:37,652 - Null reference [template 'entity.vm', line 9, column 17] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 17, column 16] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 17, column 16] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 17, column 36] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 17, column 36] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 20, column 24] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 20, column 24] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 20, column 42] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 20, column 42] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 17, column 16] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 17, column 16] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 17, column 36] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 17, column 36] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 20, column 24] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 20, column 24] : ${attr.nameupper} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 20, column 42] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:51:37,653 - Null reference [template 'entity.vm', line 20, column 42] : ${attr.javatype} cannot be resolved.
-2019-09-05 16:51:37,656 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:51:37,656 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:51:37,656 - Log4JLogChute initialized using file 'velocity.log'
-2019-09-05 16:51:37,656 - Initializing Velocity, Calling init()...
-2019-09-05 16:51:37,656 - Initializing Velocity, Calling init()...
-2019-09-05 16:51:37,656 - Initializing Velocity, Calling init()...
-2019-09-05 16:51:37,656 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:51:37,656 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:51:37,656 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
-2019-09-05 16:51:37,656 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:51:37,656 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:51:37,656 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
-2019-09-05 16:51:37,656 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:51:37,656 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:51:37,656 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
-2019-09-05 16:51:37,656 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:51:37,656 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:51:37,656 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
-2019-09-05 16:51:37,656 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:51:37,656 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:51:37,656 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:51:37,656 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:51:37,656 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:51:37,656 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
-2019-09-05 16:51:37,656 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,656 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,656 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,657 - Do unicode file recognition:  false
-2019-09-05 16:51:37,657 - Do unicode file recognition:  false
-2019-09-05 16:51:37,657 - Do unicode file recognition:  false
-2019-09-05 16:51:37,657 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
-2019-09-05 16:51:37,657 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
-2019-09-05 16:51:37,657 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
-2019-09-05 16:51:37,657 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:51:37,657 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:51:37,657 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:51:37,657 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
-2019-09-05 16:51:37,659 - Created '20' parsers.
-2019-09-05 16:51:37,659 - Created '20' parsers.
-2019-09-05 16:51:37,659 - Created '20' parsers.
-2019-09-05 16:51:37,659 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:51:37,659 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:51:37,659 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
-2019-09-05 16:51:37,659 - Velocimacro : Default library not found.
-2019-09-05 16:51:37,659 - Velocimacro : Default library not found.
-2019-09-05 16:51:37,659 - Velocimacro : Default library not found.
-2019-09-05 16:51:37,659 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:51:37,659 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:51:37,659 - Velocimacro : allowInline = true : VMs can be defined inline in templates
-2019-09-05 16:51:37,659 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:51:37,659 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:51:37,659 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
-2019-09-05 16:51:37,659 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:51:37,659 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:51:37,659 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
-2019-09-05 16:51:37,659 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:51:37,659 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:51:37,659 - Velocimacro : autoload off : VM system will not automatically reload global library macros
-2019-09-05 16:51:37,665 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,665 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,665 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,673 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,673 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,673 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,690 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,690 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,690 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,693 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,693 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,693 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,698 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,698 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
-2019-09-05 16:51:37,698 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,638 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 11:05:47,638 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 11:05:47,639 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 11:05:47,639 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 11:05:47,639 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 11:05:47,640 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 11:05:47,640 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 11:05:47,641 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 11:05:47,642 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 11:05:47,659 - Created '20' parsers.
+2019-09-06 11:05:47,662 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 11:05:47,663 - Velocimacro : Default library not found.
+2019-09-06 11:05:47,663 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 11:05:47,663 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 11:05:47,663 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 11:05:47,663 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 11:05:47,670 - ResourceManager : found pom.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,671 - ResourceManager : found application.properties.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,672 - ResourceManager : found SpringBootStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,673 - ResourceManager : found TomcatStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,673 - ResourceManager : found MybatisConf.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,674 - ResourceManager : found seq.sql.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,676 - Left side ($dbtype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. pom.xml.vm[line 47, column 15]
+2019-09-06 11:05:47,684 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 11:05:47,684 - Initializing Velocity, Calling init()...
+2019-09-06 11:05:47,684 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 11:05:47,684 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 11:05:47,684 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 11:05:47,684 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 11:05:47,684 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 11:05:47,684 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 11:05:47,684 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,684 - Do unicode file recognition:  false
+2019-09-06 11:05:47,684 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 11:05:47,684 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 11:05:47,685 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 11:05:47,685 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 11:05:47,685 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 11:05:47,685 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 11:05:47,685 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 11:05:47,685 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 11:05:47,685 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 11:05:47,685 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 11:05:47,685 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 11:05:47,686 - Created '20' parsers.
+2019-09-06 11:05:47,686 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 11:05:47,686 - Velocimacro : Default library not found.
+2019-09-06 11:05:47,686 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 11:05:47,686 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 11:05:47,686 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 11:05:47,686 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 11:05:47,693 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,695 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,696 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,697 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,699 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 11:05:47,706 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
+2019-09-06 11:05:47,706 - Null reference [template 'dao.xml.vm', line 72, column 43] : ${sort} cannot be resolved.
+:47,706 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
+2019-09-06 11:05:47,706 - Null reference [template 'dao.xml.vm', line 72, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:19:29,312 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:19:29,325 - Initializing Velocity, Calling init()...
+2019-09-06 17:19:29,325 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:19:29,325 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:19:29,325 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:19:29,325 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:19:29,325 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:19:29,325 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:19:29,330 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,330 - Do unicode file recognition:  false
+2019-09-06 17:19:29,330 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 17:19:29,354 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:19:29,354 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:19:29,355 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:19:29,355 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:19:29,356 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:19:29,357 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:19:29,358 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:19:29,359 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:19:29,360 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:19:29,361 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:19:29,380 - Created '20' parsers.
+2019-09-06 17:19:29,383 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:19:29,383 - Velocimacro : Default library not found.
+2019-09-06 17:19:29,383 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:19:29,383 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:19:29,383 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:19:29,383 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:19:29,402 - ResourceManager : found pom.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,415 - ResourceManager : found application.properties.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,415 - ResourceManager : found SpringBootStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,428 - ResourceManager : found TomcatStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,438 - ResourceManager : found MybatisConf.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,456 - ResourceManager : found seq.sql.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,482 - Left side ($dbtype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. pom.xml.vm[line 47, column 15]
+2019-09-06 17:19:29,506 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:19:29,506 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:19:29,506 - Initializing Velocity, Calling init()...
+2019-09-06 17:19:29,506 - Initializing Velocity, Calling init()...
+2019-09-06 17:19:29,506 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:19:29,506 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:19:29,506 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:19:29,506 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:19:29,506 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:19:29,506 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:19:29,506 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:19:29,506 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:19:29,507 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:19:29,507 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:19:29,507 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:19:29,507 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:19:29,507 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,507 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,507 - Do unicode file recognition:  false
+2019-09-06 17:19:29,507 - Do unicode file recognition:  false
+2019-09-06 17:19:29,507 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 17:19:29,507 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 17:19:29,507 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:19:29,507 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:19:29,507 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:19:29,508 - Created '20' parsers.
+2019-09-06 17:19:29,508 - Created '20' parsers.
+2019-09-06 17:19:29,508 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:19:29,508 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:19:29,508 - Velocimacro : Default library not found.
+2019-09-06 17:19:29,508 - Velocimacro : Default library not found.
+2019-09-06 17:19:29,509 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:19:29,509 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:19:29,509 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:19:29,509 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:19:29,509 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:19:29,509 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:19:29,509 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:19:29,509 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:19:29,515 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,515 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,517 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,517 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,526 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,526 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,539 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,539 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,551 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,551 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,559 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:19:29,559 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:19:29,559 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:19:29,559 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:19:29,559 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:19:29,559 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:19:29,559 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:19:29,559 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:19:29,559 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:19:29,560 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:19:29,560 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:19:29,560 - Null reference [template 'dao.xml.vm', line 81, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:19:29,560 - Null reference [template 'dao.xml.vm', line 81, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:19:29,565 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:19:29,565 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:19:29,565 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:19:29,565 - Initializing Velocity, Calling init()...
+2019-09-06 17:19:29,565 - Initializing Velocity, Calling init()...
+2019-09-06 17:19:29,565 - Initializing Velocity, Calling init()...
+2019-09-06 17:19:29,566 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:19:29,566 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:19:29,566 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:19:29,566 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:19:29,566 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:19:29,566 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:19:29,566 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:19:29,566 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:19:29,566 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:19:29,566 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:19:29,566 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:19:29,566 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:19:29,569 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:19:29,569 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:19:29,569 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:19:29,569 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:19:29,569 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:19:29,569 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:19:29,569 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,569 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,569 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,569 - Do unicode file recognition:  false
+2019-09-06 17:19:29,569 - Do unicode file recognition:  false
+2019-09-06 17:19:29,569 - Do unicode file recognition:  false
+2019-09-06 17:19:29,569 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
+2019-09-06 17:19:29,569 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
+2019-09-06 17:19:29,569 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
+2019-09-06 17:19:29,569 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:19:29,569 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:19:29,569 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:19:29,570 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:19:29,572 - Created '20' parsers.
+2019-09-06 17:19:29,572 - Created '20' parsers.
+2019-09-06 17:19:29,572 - Created '20' parsers.
+2019-09-06 17:19:29,572 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:19:29,572 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:19:29,572 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:19:29,572 - Velocimacro : Default library not found.
+2019-09-06 17:19:29,572 - Velocimacro : Default library not found.
+2019-09-06 17:19:29,572 - Velocimacro : Default library not found.
+2019-09-06 17:19:29,572 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:19:29,572 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:19:29,572 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:19:29,572 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:19:29,572 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:19:29,572 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:19:29,572 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:19:29,572 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:19:29,572 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:19:29,572 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:19:29,572 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:19:29,572 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:19:29,583 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,583 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,583 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,585 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,585 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,585 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,594 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,594 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,594 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,596 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,596 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,596 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,605 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,605 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:19:29,605 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,606 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:36:06,606 - Initializing Velocity, Calling init()...
+2019-09-06 17:36:06,606 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:36:06,606 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:36:06,606 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:36:06,606 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:36:06,606 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:36:06,606 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:36:06,609 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,609 - Do unicode file recognition:  false
+2019-09-06 17:36:06,609 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 17:36:06,616 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:36:06,617 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:36:06,617 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:36:06,617 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:36:06,618 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:36:06,618 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:36:06,619 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:36:06,619 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:36:06,620 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:36:06,621 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:36:06,637 - Created '20' parsers.
+2019-09-06 17:36:06,640 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:36:06,640 - Velocimacro : Default library not found.
+2019-09-06 17:36:06,640 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:36:06,640 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:36:06,640 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:36:06,640 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:36:06,647 - ResourceManager : found pom.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,648 - ResourceManager : found application.properties.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,649 - ResourceManager : found SpringBootStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,649 - ResourceManager : found TomcatStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,650 - ResourceManager : found MybatisConf.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,651 - ResourceManager : found seq.sql.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,653 - Left side ($dbtype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. pom.xml.vm[line 47, column 15]
+2019-09-06 17:36:06,660 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:36:06,660 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:36:06,660 - Initializing Velocity, Calling init()...
+2019-09-06 17:36:06,660 - Initializing Velocity, Calling init()...
+2019-09-06 17:36:06,660 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:36:06,660 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:36:06,660 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:36:06,660 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:36:06,660 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:36:06,660 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:36:06,660 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:36:06,660 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:36:06,660 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:36:06,660 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:36:06,660 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:36:06,660 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:36:06,660 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,660 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,660 - Do unicode file recognition:  false
+2019-09-06 17:36:06,660 - Do unicode file recognition:  false
+2019-09-06 17:36:06,660 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 17:36:06,660 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 17:36:06,661 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:36:06,661 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:36:06,661 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:36:06,662 - Created '20' parsers.
+2019-09-06 17:36:06,662 - Created '20' parsers.
+2019-09-06 17:36:06,662 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:36:06,662 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:36:06,662 - Velocimacro : Default library not found.
+2019-09-06 17:36:06,662 - Velocimacro : Default library not found.
+2019-09-06 17:36:06,662 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:36:06,662 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:36:06,662 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:36:06,662 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:36:06,662 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:36:06,662 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:36:06,662 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:36:06,662 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:36:06,669 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,669 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,671 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,671 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,672 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,672 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,673 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,673 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,675 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,675 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,682 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:36:06,682 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:36:06,682 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:36:06,682 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:36:06,682 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:36:06,682 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:36:06,682 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:36:06,682 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:36:06,682 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:36:06,682 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:36:06,682 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:36:06,682 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:36:06,682 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:36:06,682 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:36:06,682 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:36:06,682 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:36:06,682 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:36:06,682 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:36:06,683 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:36:06,683 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:36:06,683 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:36:06,683 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:36:06,683 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:36:06,683 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:36:06,683 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:36:06,683 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:36:06,683 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:36:06,683 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:36:06,683 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:36:06,683 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:36:06,683 - Null reference [template 'dao.xml.vm', line 81, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:36:06,683 - Null reference [template 'dao.xml.vm', line 81, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:36:06,688 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:36:06,688 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:36:06,688 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:36:06,688 - Initializing Velocity, Calling init()...
+2019-09-06 17:36:06,688 - Initializing Velocity, Calling init()...
+2019-09-06 17:36:06,688 - Initializing Velocity, Calling init()...
+2019-09-06 17:36:06,688 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:36:06,688 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:36:06,688 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:36:06,688 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:36:06,688 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:36:06,688 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:36:06,688 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:36:06,688 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:36:06,688 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:36:06,688 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:36:06,688 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:36:06,688 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:36:06,688 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:36:06,688 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:36:06,688 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:36:06,688 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:36:06,688 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:36:06,688 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:36:06,689 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,689 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,689 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,689 - Do unicode file recognition:  false
+2019-09-06 17:36:06,689 - Do unicode file recognition:  false
+2019-09-06 17:36:06,689 - Do unicode file recognition:  false
+2019-09-06 17:36:06,689 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
+2019-09-06 17:36:06,689 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
+2019-09-06 17:36:06,689 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
+2019-09-06 17:36:06,689 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:36:06,689 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:36:06,689 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:36:06,689 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:36:06,690 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:36:06,690 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:36:06,690 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:36:06,691 - Created '20' parsers.
+2019-09-06 17:36:06,691 - Created '20' parsers.
+2019-09-06 17:36:06,691 - Created '20' parsers.
+2019-09-06 17:36:06,691 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:36:06,691 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:36:06,691 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:36:06,691 - Velocimacro : Default library not found.
+2019-09-06 17:36:06,691 - Velocimacro : Default library not found.
+2019-09-06 17:36:06,691 - Velocimacro : Default library not found.
+2019-09-06 17:36:06,691 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:36:06,691 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:36:06,691 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:36:06,691 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:36:06,691 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:36:06,691 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:36:06,691 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:36:06,691 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:36:06,691 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:36:06,691 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:36:06,691 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:36:06,691 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:36:06,692 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,692 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,692 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,693 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,693 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,693 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,694 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,694 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,694 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,697 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,697 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,697 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,698 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,698 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:36:06,698 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,821 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:40:52,821 - Initializing Velocity, Calling init()...
+2019-09-06 17:40:52,821 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:40:52,821 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:40:52,821 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:40:52,821 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:40:52,821 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:40:52,821 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:40:52,824 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,824 - Do unicode file recognition:  false
+2019-09-06 17:40:52,824 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 17:40:52,831 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:40:52,832 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:40:52,832 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:40:52,833 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:40:52,833 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:40:52,833 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:40:52,834 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:40:52,834 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:40:52,835 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:40:52,835 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:40:52,852 - Created '20' parsers.
+2019-09-06 17:40:52,855 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:40:52,855 - Velocimacro : Default library not found.
+2019-09-06 17:40:52,855 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:40:52,855 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:40:52,855 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:40:52,855 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:40:52,870 - ResourceManager : found pom.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,871 - ResourceManager : found application.properties.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,872 - ResourceManager : found SpringBootStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,872 - ResourceManager : found TomcatStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,873 - ResourceManager : found MybatisConf.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,874 - ResourceManager : found seq.sql.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,876 - Left side ($dbtype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. pom.xml.vm[line 47, column 15]
+2019-09-06 17:40:52,883 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:40:52,883 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:40:52,883 - Initializing Velocity, Calling init()...
+2019-09-06 17:40:52,883 - Initializing Velocity, Calling init()...
+2019-09-06 17:40:52,883 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:40:52,883 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:40:52,883 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:40:52,883 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:40:52,883 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:40:52,883 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:40:52,883 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:40:52,883 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:40:52,883 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:40:52,883 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:40:52,883 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:40:52,883 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:40:52,883 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,883 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,883 - Do unicode file recognition:  false
+2019-09-06 17:40:52,883 - Do unicode file recognition:  false
+2019-09-06 17:40:52,883 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 17:40:52,883 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 17:40:52,883 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:40:52,883 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:40:52,884 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:40:52,885 - Created '20' parsers.
+2019-09-06 17:40:52,885 - Created '20' parsers.
+2019-09-06 17:40:52,885 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:40:52,885 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:40:52,885 - Velocimacro : Default library not found.
+2019-09-06 17:40:52,885 - Velocimacro : Default library not found.
+2019-09-06 17:40:52,885 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:40:52,885 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:40:52,885 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:40:52,885 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:40:52,885 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:40:52,885 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:40:52,885 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:40:52,885 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:40:52,892 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,892 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,894 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,894 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,894 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,894 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,896 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,896 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,897 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,897 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,904 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:40:52,904 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:40:52,904 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:40:52,904 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:40:52,904 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:40:52,904 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:40:52,904 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:40:52,904 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:40:52,904 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:40:52,904 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:40:52,905 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:40:52,905 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:40:52,905 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:40:52,905 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:40:52,905 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:40:52,905 - Null reference [template 'dao.xml.vm', line 81, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:40:52,905 - Null reference [template 'dao.xml.vm', line 81, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:40:52,910 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:40:52,910 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:40:52,910 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:40:52,910 - Initializing Velocity, Calling init()...
+2019-09-06 17:40:52,910 - Initializing Velocity, Calling init()...
+2019-09-06 17:40:52,910 - Initializing Velocity, Calling init()...
+2019-09-06 17:40:52,910 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:40:52,910 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:40:52,910 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:40:52,911 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:40:52,911 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:40:52,911 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:40:52,911 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:40:52,911 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:40:52,911 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:40:52,911 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:40:52,911 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:40:52,911 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:40:52,911 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:40:52,911 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:40:52,911 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:40:52,911 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:40:52,911 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:40:52,911 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:40:52,911 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,911 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,911 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,911 - Do unicode file recognition:  false
+2019-09-06 17:40:52,911 - Do unicode file recognition:  false
+2019-09-06 17:40:52,911 - Do unicode file recognition:  false
+2019-09-06 17:40:52,911 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
+2019-09-06 17:40:52,911 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
+2019-09-06 17:40:52,911 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
+2019-09-06 17:40:52,911 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:40:52,911 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:40:52,911 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:40:52,911 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:40:52,912 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:40:52,912 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:40:52,912 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:40:52,912 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:40:52,912 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:40:52,912 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:40:52,912 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:40:52,912 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:40:52,912 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:40:52,912 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:40:52,912 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:40:52,912 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:40:52,913 - Created '20' parsers.
+2019-09-06 17:40:52,913 - Created '20' parsers.
+2019-09-06 17:40:52,913 - Created '20' parsers.
+2019-09-06 17:40:52,913 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:40:52,913 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:40:52,913 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:40:52,913 - Velocimacro : Default library not found.
+2019-09-06 17:40:52,913 - Velocimacro : Default library not found.
+2019-09-06 17:40:52,913 - Velocimacro : Default library not found.
+2019-09-06 17:40:52,913 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:40:52,913 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:40:52,913 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:40:52,913 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:40:52,913 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:40:52,913 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:40:52,913 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:40:52,913 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:40:52,913 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:40:52,913 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:40:52,913 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:40:52,913 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:40:52,914 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,914 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,914 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,915 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,915 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,915 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,917 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,917 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,917 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,919 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,919 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,919 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,920 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,920 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:40:52,920 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,454 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:42:51,455 - Initializing Velocity, Calling init()...
+2019-09-06 17:42:51,455 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:42:51,455 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:42:51,455 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:42:51,455 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:42:51,455 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:42:51,455 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:42:51,457 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,458 - Do unicode file recognition:  false
+2019-09-06 17:42:51,458 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 17:42:51,465 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:42:51,466 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:42:51,466 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:42:51,466 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:42:51,467 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:42:51,467 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:42:51,468 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:42:51,468 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:42:51,469 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:42:51,469 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:42:51,486 - Created '20' parsers.
+2019-09-06 17:42:51,489 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:42:51,489 - Velocimacro : Default library not found.
+2019-09-06 17:42:51,489 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:42:51,489 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:42:51,489 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:42:51,490 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:42:51,497 - ResourceManager : found pom.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,498 - ResourceManager : found application.properties.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,499 - ResourceManager : found SpringBootStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,499 - ResourceManager : found TomcatStartApplication.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,499 - ResourceManager : found MybatisConf.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,501 - ResourceManager : found seq.sql.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,502 - Left side ($dbtype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. pom.xml.vm[line 47, column 15]
+2019-09-06 17:42:51,510 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:42:51,510 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:42:51,510 - Initializing Velocity, Calling init()...
+2019-09-06 17:42:51,510 - Initializing Velocity, Calling init()...
+2019-09-06 17:42:51,510 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:42:51,510 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:42:51,510 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:42:51,510 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:42:51,510 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:42:51,510 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:42:51,510 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:42:51,510 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:42:51,510 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:42:51,510 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:42:51,510 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:42:51,510 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:42:51,510 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,510 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,510 - Do unicode file recognition:  false
+2019-09-06 17:42:51,510 - Do unicode file recognition:  false
+2019-09-06 17:42:51,510 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 17:42:51,510 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2'
+2019-09-06 17:42:51,510 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:42:51,510 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:42:51,511 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:42:51,512 - Created '20' parsers.
+2019-09-06 17:42:51,512 - Created '20' parsers.
+2019-09-06 17:42:51,512 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:42:51,512 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:42:51,512 - Velocimacro : Default library not found.
+2019-09-06 17:42:51,512 - Velocimacro : Default library not found.
+2019-09-06 17:42:51,512 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:42:51,512 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:42:51,512 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:42:51,512 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:42:51,512 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:42:51,512 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:42:51,512 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:42:51,512 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:42:51,519 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,519 - ResourceManager : found dao.xml.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,521 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,521 - ResourceManager : found dao.java.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,521 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,521 - ResourceManager : found entity.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,523 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,523 - ResourceManager : found service.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,524 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,524 - ResourceManager : found endpoint.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,531 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:42:51,531 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:42:51,531 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:42:51,531 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 43, column 103]
+2019-09-06 17:42:51,531 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:42:51,531 - Null reference [template 'dao.xml.vm', line 49, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:42:51,531 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:42:51,531 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 24]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:42:51,542 - Left side ($attr.operatetype) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 60, column 53]
+2019-09-06 17:42:51,542 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:42:51,542 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:42:51,543 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:42:51,543 - Left side (${attr.javatype}) of '==' operation has null value. If it is a reference, it may not be in the context or its toString() returned null. dao.xml.vm[line 75, column 103]
+2019-09-06 17:42:51,543 - Null reference [template 'dao.xml.vm', line 81, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:42:51,543 - Null reference [template 'dao.xml.vm', line 81, column 43] : ${sort} cannot be resolved.
+2019-09-06 17:42:51,547 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:42:51,547 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:42:51,547 - Log4JLogChute initialized using file 'velocity.log'
+2019-09-06 17:42:51,548 - Initializing Velocity, Calling init()...
+2019-09-06 17:42:51,548 - Initializing Velocity, Calling init()...
+2019-09-06 17:42:51,548 - Initializing Velocity, Calling init()...
+2019-09-06 17:42:51,548 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:42:51,548 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:42:51,548 - Starting Apache Velocity v1.7 (compiled: 2010-11-19 12:14:37)
+2019-09-06 17:42:51,548 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:42:51,548 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:42:51,548 - Default Properties File: org\apache\velocity\runtime\defaults\velocity.properties
+2019-09-06 17:42:51,548 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:42:51,548 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:42:51,548 - Trying to use logger class org.apache.velocity.runtime.log.AvalonLogChute
+2019-09-06 17:42:51,550 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:42:51,550 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:42:51,550 - Target log system for org.apache.velocity.runtime.log.AvalonLogChute is not available (java.lang.NoClassDefFoundError: org/apache/log/format/Formatter).  Falling back to next log system...
+2019-09-06 17:42:51,550 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:42:51,550 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:42:51,550 - Trying to use logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:42:51,550 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:42:51,550 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:42:51,550 - Using logger class org.apache.velocity.runtime.log.Log4JLogChute
+2019-09-06 17:42:51,550 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,550 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,550 - ResourceLoader instantiated: org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,551 - Do unicode file recognition:  false
+2019-09-06 17:42:51,551 - Do unicode file recognition:  false
+2019-09-06 17:42:51,551 - Do unicode file recognition:  false
+2019-09-06 17:42:51,551 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
+2019-09-06 17:42:51,551 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
+2019-09-06 17:42:51,551 - FileResourceLoader : adding path 'D:\work\workspace\GIT\demo\java\ExportSpringBootProj\src\template\t2\view'
+2019-09-06 17:42:51,551 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:42:51,551 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:42:51,551 - ResourceCache: initialized (class org.apache.velocity.runtime.resource.ResourceCacheImpl) with class java.util.Collections$SynchronizedMap cache map.
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Stop
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Define
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Break
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Evaluate
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Literal
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Macro
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Parse
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Include
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:42:51,552 - Loaded System Directive: org.apache.velocity.runtime.directive.Foreach
+2019-09-06 17:42:51,553 - Created '20' parsers.
+2019-09-06 17:42:51,553 - Created '20' parsers.
+2019-09-06 17:42:51,553 - Created '20' parsers.
+2019-09-06 17:42:51,553 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:42:51,553 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:42:51,553 - Velocimacro : "velocimacro.library" is not set.  Trying default library: VM_global_library.vm
+2019-09-06 17:42:51,553 - Velocimacro : Default library not found.
+2019-09-06 17:42:51,553 - Velocimacro : Default library not found.
+2019-09-06 17:42:51,553 - Velocimacro : Default library not found.
+2019-09-06 17:42:51,553 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:42:51,553 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:42:51,553 - Velocimacro : allowInline = true : VMs can be defined inline in templates
+2019-09-06 17:42:51,553 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:42:51,553 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:42:51,553 - Velocimacro : allowInlineToOverride = false : VMs defined inline may NOT replace previous VM definitions
+2019-09-06 17:42:51,553 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:42:51,553 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:42:51,553 - Velocimacro : allowInlineLocal = false : VMs defined inline will be global in scope if allowed.
+2019-09-06 17:42:51,553 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:42:51,553 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:42:51,553 - Velocimacro : autoload off : VM system will not automatically reload global library macros
+2019-09-06 17:42:51,554 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,554 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,554 - ResourceManager : found data.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,556 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,556 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,556 - ResourceManager : found detail.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,557 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,557 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,557 - ResourceManager : found detail.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,560 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,560 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,560 - ResourceManager : found list.html.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,562 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,562 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader
+2019-09-06 17:42:51,562 - ResourceManager : found list.js.vm with loader org.apache.velocity.runtime.resource.loader.FileResourceLoader

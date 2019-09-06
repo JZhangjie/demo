@@ -223,9 +223,15 @@ public class DatabaseUtil {
             	}
             	
         		field.setNameupper(upname);
-            	field.setDbtype(jdbctypename);
-            	field.setJavatype(classname);
-            	
+        		
+        		if(field.getDbtype()==null) {
+        			field.setDbtype(jdbctypename);
+        		}
+        		
+            	if(field.getJavatype() == null) {
+            		field.setJavatype(classname);
+            	}
+
             	if(!fields.contains(field)) {
             		fields.add(field);
             	}

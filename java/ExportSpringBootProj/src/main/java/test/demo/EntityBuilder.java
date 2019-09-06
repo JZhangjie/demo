@@ -78,10 +78,14 @@ public  class EntityBuilder {
 	 */
 	private VelocityContext buildContext(Project project,Entity entity) {
 		List<test.demo.entityxml.Field> entity_attrs_forsearch = new ArrayList<test.demo.entityxml.Field>();
+		List<test.demo.entityxml.Field> entity_attrs = new ArrayList<test.demo.entityxml.Field>();
 		for(int i=0;i<entity.getFields().size();i++) {
 			test.demo.entityxml.Field field = entity.getFields().get(i);
 			if(field.isSearch()) {
 				entity_attrs_forsearch.add(field);
+			}
+			if(field.getDbtype()!=null) {
+				entity_attrs.add(field);
 			}
 		}
         VelocityContext ctx = new VelocityContext(); 
@@ -89,7 +93,7 @@ public  class EntityBuilder {
         ctx.put("entity_name", entity.getName());
         ctx.put("entity_name_low", entity.getNamelow());
         ctx.put("entity_table", entity.getTable());
-        ctx.put("entity_attrs", entity.getFields());
+        ctx.put("entity_attrs", entity_attrs);
         ctx.put("entity_attrs_forsearch", entity_attrs_forsearch);
         ctx.put("entity_functions", entity.getFunctions());
         ctx.put("entity_key", entity.getPrimarykey()); 

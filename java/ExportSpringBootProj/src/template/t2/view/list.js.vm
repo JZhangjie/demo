@@ -18,6 +18,29 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 	initEvent()
 	
 	function initView(){
+			//时间控件初始化
+#foreach ($field in $conditionFields)
+#if($field.operatetype=='date')
+		laydate.render({
+			elem: '#start_${field.name}',
+			type:'date'
+		  });
+		laydate.render({
+			elem: '#end_${field.name}',
+			type:'date'
+		  });
+#end
+#if($field.operatetype=='time')
+		laydate.render({
+			elem: '#start_${field.name}',
+			type:'datetime'
+		  });
+		laydate.render({
+			elem: '#end_${field.name}',
+			type:'datetime'
+		  });
+#end
+#end
 		  initData();
 		  if(status==0){
 			  $("#work-panel").hide();
@@ -38,6 +61,7 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 					break;
 			};
 		});
+		
 		//输入框事件
 		$('#search_ipt').on('keydown', function (event) {
             if (event.keyCode == 13) {
@@ -45,10 +69,12 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
                 return false
             }
         });
+        
 		//按钮事件监听
 		$("#export_btn").click(function(e){
 			store.exportTable(tableobj.config.id);
 		});
+		
 		$("#search_btn").click(function(e){
 			initData();
 		});
@@ -56,32 +82,38 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 		$("#add_btn").click(function(e){
 			window.location="detail.html?status=1";
 		});
+		
 		$("#del_btn").click(function(e){
 			      var checkStatus = table.checkStatus('tableItem')
 				  ,data = checkStatus.data;
 				  onDeleteClick(data);
 		});
+		
 		$("#moreSearch_btn").click(function(e){
-			var date1 = $("#date1").val();
-			var date2 = $("#date2").val();
-			var item = {
-				min_rwcjsj:date1?date1:'',
-				max_rwcjsj:date2?date2:'',
-				zdbm:$("#zdbm_select").val(),
-				ccrwbt:$("#ccrwbt_ipt").val().trim(),
-				rwzl:$("#rwzl_select").val(),
-				state:$("#state_select").val()
+			var item={};
+#foreach ($field in $conditionFields)
+#if($field.operatetype=='string' || $field.operatetype=='text')
+			if($("#${field.name}").val()){
+				item.${field.name} = $("#${field.name}").val();
 			}
-			initData(findurl2,item);
+#end
+#end
+			initData(store.urls.findByCondition,item);
 		});
+		
 		$("#moreSearch_clear_btn").click(function(e){
-			$("#zdbm_select").val("");
-			$("#ccrwbt_ipt").val().trim("");
-			$("#rwzl_select").val("");
-			$("#date1").val("");
-			$("#date2").val("");
+#foreach ($field in $conditionFields)
+#if($field.operatetype=='string' || $field.operatetype=='text')
+			$("#${field.name}").val("");
+#end
+#if($field.operatetype=='date' || $field.operatetype=='time')
+			$("#start_${field.name}").val("");
+			$("#end_${field.name}").val("");
+#end
+#end
 			initData();
 		});
+		
 		$("#moreSearch_toggle_btn").click(function(e){
 			onMoreSearch();
 		});
@@ -148,7 +180,7 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 		}
 		tableobj = table.render({
 			elem: '#tableItem',
-			url: url,
+			url: url?url:store.urls.findlist,
 			method: 'post',
 			title: '列表',
 			where: item?item:where,

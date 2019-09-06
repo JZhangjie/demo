@@ -47,6 +47,30 @@ public class ${entity_name}Controller{
 #end
 
 	/**
+	 * 获取findByCondition
+	 * @param 
+	 * @return
+	 * @throws SQLException
+	 * @throws IOException
+	 */
+	@RequestMapping(value = "/findByCondition", method = RequestMethod.POST)
+	@ResponseBody
+	@CrossOrigin
+	public Map<String, Object> findByCondition(@RequestBody HashMap<String,Object> item) throws SQLException, IOException {
+		Map<String, Object> map = new HashMap<String, Object>();
+		List<HashMap<String,Object>> list = new ArrayList<HashMap<String,Object>>();
+		PageHelper.startPage(Integer.parseInt(item.get("pageNum").toString()), Integer.parseInt(item.get("pageSize").toString()));
+		list = ${entity_name_low}Service.findByCondition(item);
+
+		PageInfo<HashMap<String,Object>> pageInfo = new PageInfo<HashMap<String,Object>>(list);
+		map.put("code", 0);
+		map.put("msg", "ok");
+		map.put("count", pageInfo.getTotal());
+		map.put("data", pageInfo.getList());
+		return map;
+	}
+
+	/**
 	 * 获取List
 	 * 
 	 * @param 

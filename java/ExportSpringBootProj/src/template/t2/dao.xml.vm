@@ -50,6 +50,38 @@
 		</if>
 	</select>
 	
+	<!-- 条件查找列表 -->
+	<select id="findByCondition" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select 
+		<include refid="Base_Column_List"></include>
+		from ${entity_table}
+		<trim prefix="where" prefixOverrides="and|or">
+#foreach ($attr in $entity_attrs)
+#if($attr.operatetype=='date' || $attr.operatetype=='time')
+			<if test="start_${attr.name} !='' and start_${attr.name} != null">
+				and ${attr.name} &gt;= #{start_${attr.name},jdbcType=${attr.dbtype}}
+			</if>
+			<if test="end_${attr.name} !='' and end_${attr.name} != null">
+				and ${attr.name} &lt;= #{end_${attr.name},jdbcType=${attr.dbtype}}
+			</if>
+#else
+			<if test="${attr.name} !='' and ${attr.name} != null">
+				and ${attr.name} = #{${attr.name},jdbcType=${attr.dbtype}}
+			</if>
+#end
+#end
+#if($entity_attrs_forsearch.size()>0)
+			<if test="searchstr !='' and searchstr !=null" >
+				and (#foreach($attr in $entity_attrs_forsearch) #if(${attr.javatype}=='String')${attr.name} #else to_char(${attr.name}, '9999999999999999999') #end like CONCAT(CONCAT('%', #{searchstr}), '%') 
+					#if($velocityCount != $entity_attrs_forsearch.size())or #end#end )
+			</if>
+#end
+     	</trim>
+     	<if test="sort !='' and sort !=null" >
+				order by  ${sort}
+		</if>
+	</select>
+	
 	<!-- 依据id查找 -->
 	<select id="findByKey" parameterType="${entity_key.javatype}" resultMap="BaseResultMap">
 		select 
