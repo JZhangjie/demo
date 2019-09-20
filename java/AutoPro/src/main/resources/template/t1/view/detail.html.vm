@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>详情</title>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<link rel="stylesheet" href="../../libs/layui/css/layui.css" />
+		
+	</head>
+	<body style="padding: 8px;">
+		<div class="layui-row">
+				<form class="layui-form layui-form-pane" action="" style="margin-top: 8px;">
+               <div class="layui-form-item" style="margin-top: 23px;">
+               	<div class="layui-inline">
+               		<button id="back_btn" type="button" class="layui-btn layui-btn-normal layui-new-btn-width">
+               			<i class="layui-icon layui-icon-left layuiadmin-button-btn"></i>返回</button>
+               	</div>
+               	<div class="layui-inline">
+               		<button id="save_btn" type="button" lay-submit class="layui-btn layui-btn-normal layui-new-btn-width">
+               			<i class="layui-icon layui-icon-file layuiadmin-button-btn"></i>保存</button>
+               	</div>
+               </div>
+#foreach ($field in $formFields)
+#if($field.operatetype=='string' || $field.operatetype=='date' || $field.operatetype=='time')
+				<div class="layui-form-item">
+					<label class="layui-form-label">${field.label}</label>
+					<div class="layui-input-block">
+						<input id="${field.name}" name="${field.name}" type="text" class="layui-input">
+					</div>
+				</div>
+#end
+#if($field.operatetype=='number')
+				<div class="layui-form-item">
+					<label class="layui-form-label">${field.label}</label>
+					<div class="layui-input-block">
+						<input id="${field.name}" name="${field.name}" type="number" class="layui-input">
+					</div>
+				</div>
+#end
+#if($field.operatetype=='select')
+				<div class="layui-form-item">
+					<label class="layui-form-label">${field.label}</label>
+					<div class="layui-input-block">
+						<select  lay-verify="" id="${field.name}" name="${field.name}">
+							<option value="">选择一个类型</option>
+							<option value="值">值</option>
+						</select>
+					</div>
+				</div>
+#end
+#if($field.operatetype=='radio')
+				<div class="layui-form-item">
+					<label class="layui-form-label">${field.label}</label>
+					<div class="layui-input-block">
+						<input type="radio" name="${field.name}" value="违法" title="违法">
+                        <input type="radio" name="${field.name}" value="合规" title="合规" checked>
+					</div>
+				</div>
+#end
+#if($field.operatetype=='text')
+				<div class="layui-form-item layui-form-text">
+					<label class="layui-form-label">${field.label}</label>
+					<div class="layui-input-block">
+						<textarea id="${field.name}" name="${field.name}" placeholder="请输入内容" class="layui-textarea"></textarea>
+					</div>
+				</div>
+#end
+#end
+			</form>
+		</div>
+	</body>
+	<link rel="stylesheet" href="../../css/common.css" />
+	<script type="text/javascript" src="../../libs/jquery.min.js"></script>
+	<script type="text/javascript" src="../../libs/layui/layui.all.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+   <script type="text/javascript" src="data.js"></script>
+	<script type="text/javascript" src="detail.js"></script>
+</html>

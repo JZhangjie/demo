@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+  <name>WFJSJG_FCASE</name>													<!-- 项目名称 【必填】-->
+  <projectpath>export</projectpath>  <!-- 项目输出地址 【必填】-->
+  <packagename>com.wfjsjg.fcase</packagename>								<!-- 项目包名  【必填】-->
+  <packagepath>com/wfjsjg/fcase</packagepath>								<!-- 项目包名对应的路径 【选填】-->
+  <packagetype>war</packagetype>											<!-- 项目打包类型 【默认war】-->
+  <description>fcase</description>											<!-- 描述信息 -->
+  <dbdriver>org.postgresql.Driver</dbdriver>								<!-- 数据库驱动 -->
+  <dburl>jdbc:postgresql://127.0.0.1:5432/wfjsjg</dburl>					<!-- 数据库连接地址 -->
+  <dbusername>postgres</dbusername>											<!-- 数据库用户名 -->
+  <dbpassword>123456</dbpassword>											<!-- 数据库密码 -->
+  <tablefilter>^f_</tablefilter><!-- 筛选以f_开头的表 正则表达式筛选-->
+  <tables>f_stage</tables>		<!-- 没有内容时，读取数据库所有表 -->
+  <ignoretables></ignoretables> <!-- 需要屏蔽的表名 -->
+  <entities>
+    <entity>							<!-- 实体类 与数据库表一一对应 -->
+      <name>F_stage</name>
+      <table>f_stage</table>			<!-- 表名称  用于和数据库表对应  （后面实体类的名称来源于此）-->
+      <operate>form,table,condition</operate>		<!-- 是否要进行页面项 form：表单 table：列表 condition:高级查询-->
+      <outapi>true</outapi>             <!--api接口是否要输出到data.js中 【默认true】-->
+      <primarykey>						<!-- 主键字段 -->
+	      <name>gid</name>				<!-- 字段名、表列名，生成的二者一致 【必填】用于表列名和字段名对应-->
+          <auto>true</auto>				<!-- 主键是否自增 -->
+      </primarykey>
+      <fields>
+      	<field>								<!-- 字段-->
+          <name>xydm</name>
+          <nameupper>Xydm</nameupper>
+          <dbtype>VARCHAR</dbtype>				<!-- JDBC类型，选填 -->
+          <javatype>java.lang.String</javatype><!-- java类 ， 选填-->
+          <search>true</search>				<!-- 是否作为模糊查询的条件，选填 -->
+          <operate>form,table,condition</operate>		<!-- 是否要进行页面项，form：表单 table：列表 condition:高级查询，选填-->
+          <operatetype>text</operatetype> 	<!-- 字段显示类型 text,string,number,date,time,select,radio-->
+        </field>
+      </fields>
+      <functions>
+      	<function>						<!-- 函数，每个实体类除了默认的增删改查外的函数-->
+      		<name>findStageList</name>
+      		<paramtype>HashMap&lt;String,Object&gt;</paramtype>
+      		<dbparamtype>java.util.HashMap</dbparamtype>
+      		<paramname>item</paramname>
+      		<result>List&lt;HashMap&lt;String,Object&gt;&gt;</result>
+      	</function>
+      </functions>
+    </entity>
+  </entities>
+</project>

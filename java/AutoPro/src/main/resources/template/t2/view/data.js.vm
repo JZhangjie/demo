@@ -1,0 +1,59 @@
+(function(win) {
+   var apihost = typeof APIHOST != "undefined" && APIHOST ? APIHOST : "http://localhost:8080/api/";
+   var store = {
+      urls: {
+#foreach ($entity in $project.apiEntities)
+         ${entity.namelow}:{
+            add: apihost + "/${entity.namelow}/add",
+            addItems: apihost + "/${entity.namelow}/addItems",
+            findbykey: apihost + "/${entity.namelow}/findByKey",
+            findlist: apihost + "/${entity.namelow}/findList",
+            findByConditionPage : apihost + "/${entity.namelow}/findByConditionPage",
+            findByCondition:apihost + "/${entity.namelow}/findByCondition",
+            findall:apihost + "/${entity.namelow}/findAll",
+            update: apihost + "/${entity.namelow}/update",
+            delete: apihost + "/${entity.namelow}/delete",
+            deleteByCondition: apihost + "/${entity.namelow}/deleteByCondition"
+         },
+#end
+      }
+   };
+   store.get = function(url,item, successed) {
+   	  if(item){
+   	      url+="?";
+   	  }
+   	  for(let k in item) {  
+	      url+=k+"="+item[k]; 
+	  }
+      $.ajax({
+         type: "get",
+         url: url,
+         dataType: 'json',
+         success: function(data) {
+            if (successed) {
+               successed(data);
+            }
+         },
+         error: function(error) {}
+      })
+   }
+
+   store.post = function(url,item, successed) {
+      $.ajax({
+         type: "post",
+         url: url,
+         contentType: 'application/json',
+         dataType: 'json',
+         data: JSON.stringify(item),
+         success: function(data) {
+            if (successed) {
+               successed(data);
+            }
+         },
+         error: function(error) {}
+      })
+   }
+
+   win.store = store;
+   return store;
+})(window)

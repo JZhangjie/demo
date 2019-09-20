@@ -4,7 +4,8 @@ layui.use(['table','layer','laydate'], function() {
 	var laydate = layui.laydate;
    
 	var status = parseInt(getQueryVariable("status")); //0:查看/选择 1:新增 2:修改
-   var currentItem={tempid:1};
+	var id = #if($entity.primarykey.javatype=='java.lang.Integer') parseInt(getQueryVariable("id")) #else getQueryVariable("id") #end ; //0:查看/选择 1:新增 2:修改
+    var currentItem={${entity.primarykey.name}:id};
    
 	initView();
 	initEvent()
@@ -27,6 +28,9 @@ layui.use(['table','layer','laydate'], function() {
 #end
 		if(status==0){
 			$("#save_btn").hide();
+			$("input").attr("disabled",true);
+			$("textarea").attr("disabled",true);
+			$("select").attr("disabled",true);
 		}
 		initData();
 	}
@@ -57,7 +61,7 @@ layui.use(['table','layer','laydate'], function() {
             fetchForm(currentItem);
             break;
          default:
-            store.getItem(currentItem.tempid,function(d){
+            store.get(store.urls.findbykey,{${entity.primarykey.name}:currentItem.${entity.primarykey.name}},function(d){
                currentItem=d;
                fetchForm(currentItem);
             });
@@ -69,7 +73,7 @@ layui.use(['table','layer','laydate'], function() {
       switch (status){
          case 1:
          	layer.load("新增中...");
-            store.addItem(item,function(d){
+            store.post(store.urls.add,item,function(d){
                currentItem.${entity.primarykey.name}=d;
                status=2;
                initData();
@@ -78,7 +82,7 @@ layui.use(['table','layer','laydate'], function() {
             break;
          case 2:
          	layer.load("更新中...");
-            store.updateItem(item,function(d){
+            store.post(store.urls.update,item,function(d){
                initData();
                layer.closeAll();
             });
@@ -90,7 +94,7 @@ layui.use(['table','layer','laydate'], function() {
    
 	function fetchForm(item){
 #foreach ($field in $formFields)
-#if($field.operatetype=='string' || $field.operatetype=='text')
+#if($field.operatetype=='string' || $field.operatetype=='text' || $field.operatetype=='number')
 		$("#${field.name}").val(item.${field.name}?item.${field.name}:"");
 #end
 #if($field.operatetype=='date')
@@ -112,7 +116,7 @@ layui.use(['table','layer','laydate'], function() {
 	
 	function getForm(item){
 #foreach ($field in $formFields)
-#if($field.operatetype=='string' || $field.operatetype=='text')
+#if($field.operatetype=='string' || $field.operatetype=='text' || $field.operatetype=='date' || $field.operatetype=='time'|| $field.operatetype=='number')
 		if($("#${field.name}").val()){
 			item.${field.name} = $("#${field.name}").val();
 		}

@@ -40,7 +40,7 @@
 #end
 #if($entity_attrs_forsearch.size()>0)
 			<if test="searchstr !='' and searchstr !=null" >
-				and (#foreach($attr in $entity_attrs_forsearch) #if(${attr.javatype}=='String')${attr.name} #else to_char(${attr.name}, '9999999999999999999') #end like CONCAT(CONCAT('%', #{searchstr}), '%') 
+				and (#foreach($attr in $entity_attrs_forsearch) #if(${attr.javatype}=='java.lang.String')${attr.name} #else to_char(${attr.name}, '9999999999999999999') #end like CONCAT(CONCAT('%', #{searchstr}), '%') 
 					#if($velocityCount != $entity_attrs_forsearch.size())or #end#end )
 			</if>
 #end
@@ -72,7 +72,7 @@
 #end
 #if($entity_attrs_forsearch.size()>0)
 			<if test="searchstr !='' and searchstr !=null" >
-				and (#foreach($attr in $entity_attrs_forsearch) #if(${attr.javatype}=='String')${attr.name} #else to_char(${attr.name}, '9999999999999999999') #end like CONCAT(CONCAT('%', #{searchstr}), '%') 
+				and (#foreach($attr in $entity_attrs_forsearch) #if(${attr.javatype}=='java.lang.String')${attr.name} #else to_char(${attr.name}, '9999999999999999999') #end like CONCAT(CONCAT('%', #{searchstr}), '%') 
 					#if($velocityCount != $entity_attrs_forsearch.size())or #end#end )
 			</if>
 #end

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <project>
-  <name>WFJSJG_FCASE</name>
+  <name>vmdemo</name>
   <projectpath>D:\work\workspace\GIT\ExportSpringBootProject</projectpath>
-  <packagename>com.wfjsjg.fcase</packagename>
-  <packagepath>com/wfjsjg/fcase</packagepath>
+  <packagename>com.vmdemo.test</packagename>
+  <packagepath>com/vmdemo/test</packagepath>
   <packagetype>war</packagetype>
-  <description>fcase</description>
+  <description>test</description>
   <dbdriver>org.postgresql.Driver</dbdriver>
-  <dburl>jdbc:postgresql://127.0.0.1:5432/wfjsjg</dburl>
+  <dburl>jdbc:postgresql://127.0.0.1:5432/test</dburl>
   <dbusername>postgres</dbusername>
   <dbpassword>123456</dbpassword>
-  <tablefilter>^f_</tablefilter>
-  <tables>f_stage</tables>
+  <tablefilter></tablefilter>
+  <tables>cuser</tables>
   <ignoretables></ignoretables>
   <entities>
     <entity>
-      <table>f_stage</table>
+      <table>cuser</table>
       <operate>table,form</operate>
       <primarykey>
 	      <name>gid</name>
@@ -25,33 +25,37 @@
       	<field>
           <name>name</name>
           <search>true</search>
-          <operate>form,table</operate>    <!-- form,table,condition-->
-          <operatetype>string</operatetype> <!-- text date time string number select  date,time在condition条件查询中需要分成起始时间和终止时间-->
+          <operate>form,table,condition</operate>
+          <operatetype>string</operatetype> 
           <label>名字</label>
         </field>
         <field>
-          <name>xydm</name>
+          <name>description</name>
           <search>true</search>
-          <operate>form,table</operate>		<!-- form,table -->
-          <operatetype>text</operatetype> <!-- text date time string number -->
-          <label>备注</label>
+          <operate>form,table,condition</operate>   
+          <operatetype>text</operatetype> 
+          <label>简介</label>
         </field>
         <field>
-          <name>cctime</name>
-          <search>true</search>
-          <operate>form,table</operate>
-          <operatetype>time</operatetype> <!-- text date time string number -->
-          <label>采集时间</label>
+          <name>age</name>
+          <operate>form,table,condition</operate>	
+          <operatetype>number</operatetype> 
+          <label>年龄</label>
+        </field>
+        <field>
+          <name>sex</name>
+          <operate>form,table,condition</operate>
+          <operatetype>select</operatetype> 
+          <label>性别</label>
+        </field>
+        <field>
+          <name>registertime</name>
+          <operate>form,table,condition</operate>
+          <operatetype>time</operatetype> 
+          <label>注册时间</label>
         </field>
       </fields>
       <functions>
-      	<function>
-      		<name>findStageList</name>
-      		<paramtype>HashMap&lt;String,Object&gt;</paramtype>
-      		<dbparamtype>java.util.HashMap</dbparamtype>
-      		<paramname>item</paramname>
-      		<result>List&lt;HashMap&lt;String,Object&gt;&gt;</result>
-      	</function>
       </functions>
     </entity>
   </entities>

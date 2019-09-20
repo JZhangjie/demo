@@ -22,16 +22,15 @@ public class Field {
     @XmlElement(name = "search")
     protected boolean search;
     @XmlElement(name = "operate")
-    protected String operate;    //操作类型  table:列表显示  form:表单显示
+    protected String operate;    		//操作类型  table:列表显示  form:表单显示 condition:高级查询
     @XmlElement(name = "operatetype")
-    protected String operatetype;    
+    protected String operatetype;    	//string,text,select,date,time,number
     @XmlElement(name = "label")
     protected String label;    
 
     public String getName() {
         return name;
     }
-
 
     public void setName(String value) {
         this.name = value;

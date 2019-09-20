@@ -38,7 +38,7 @@
 	
 	<complexType name="project">
 		<sequence maxOccurs="1" minOccurs="1">
-			<element name="name" type="string"></element>
+			<element name="name" type="boolean"></element>
 			<element name="packagename" type="string"></element>
 			<element name="packagepath" type="string"></element>
 			<element name="packagetype" type="string"></element>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--具体配置可见config包 vm文件以文件夹为单位； vm文件名称 a.b.c.d.vm  c.d为vm.name  a/b 为vm.path-->
+<config>
+	<vmroot>t2</vmroot>
+	<vmconfigs>
+		<vmconfig>
+			<vmpath>data</vmpath>
+			<isdir>true</isdir>
+			<outfile>{project.projectpath}/sql/{vm.name}</outfile>
+			<type>project</type>
+		</vmconfig>
+		<vmconfig>
+			<vmpath>project</vmpath>
+			<isdir>true</isdir>
+			<outfile>{project.projectpath}/project/src/{vm.path}/{vm.name}</outfile>
+			<type>project</type>
+		</vmconfig>
+		<vmconfig>
+			<vmpath>model</vmpath>
+			<isdir>true</isdir>
+			<outfile>{project.projectpath}/project/src/main/java/{project.packagepath}/{vm.path}/{entity.name}{vm.name}</outfile>
+			<type>entity</type>
+		</vmconfig>
+		<vmconfig>
+			<vmpath>project/root</vmpath>
+			<isdir>true</isdir>
+			<outfile>{project.projectpath}/project/src/main/java/{project.packagepath}/{vm.name}</outfile>
+			<type>entity</type>
+		</vmconfig>
+		<vmconfig>
+			<vmpath>view/model</vmpath>
+			<isdir>true</isdir>
+			<outfile>{project.projectpath}/view/modules/{entity.name}/{vm.name}</outfile>
+			<type>entity</type>
+		</vmconfig>
+		<vmconfig>
+			<vmpath>view</vmpath>
+			<isdir>false</isdir>
+			<vmname>data.js.vm</vmname>
+			<outfile>{project.projectpath}/view/js/{vm.name}</outfile>
+			<type>project</type>
+			<issingle>true</issingle>
+		</vmconfig>
+	</vmconfigs>						
+</config>

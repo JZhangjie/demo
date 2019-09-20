@@ -1,0 +1,72 @@
+package ${project.packagename}.service;
+
+import java.util.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ${project.packagename}.dao.${entity.name}Mapper;
+import ${project.packagename}.entity.${entity.name};
+
+@Service
+public class ${entity.name}Service{
+
+	@SuppressWarnings("unused")
+	private static final Logger LOGGER = LoggerFactory.getLogger(${entity.name}Service.class);
+	@Autowired
+	private ${entity.name}Mapper ${entity.namelow}Mapper;
+
+	protected ${entity.name}Mapper getMapper() {
+		return ${entity.namelow}Mapper;
+	}
+	
+#foreach ($function in $entity.functions)
+	public ${function.result} ${function.name}(${function.paramtype} ${function.paramname}){
+		return ${entity.namelow}Mapper.${function.name}(${function.paramname});
+	}
+#end
+
+	public List<HashMap<String,Object>> findByCondition(HashMap<String,Object> ${entity.namelow}){
+		return ${entity.namelow}Mapper.findByCondition(${entity.namelow});
+	}
+	
+	public List<${entity.name}> findList(${entity.name} ${entity.namelow}){
+		return ${entity.namelow}Mapper.findList(${entity.namelow});
+	}
+	
+	public ${entity.name} findByKey(${entity.primarykey.javatype} ${entity.primarykey.name}){
+		return ${entity.namelow}Mapper.findByKey(${entity.primarykey.name});
+	}
+	
+	public int insertSelective(${entity.name} ${entity.namelow}){
+#if(!${entity.primarykey.auto})
+		${entity.primarykey.javatype} kv= this.getUniqueKey();
+		${entity.namelow}.set${entity.primarykey.nameupper}(kv);
+#end
+		return ${entity.namelow}Mapper.insertSelective(${entity.namelow});
+	}
+	
+	public int deleteByKey(${entity.primarykey.javatype} ${entity.primarykey.name}){
+		return ${entity.namelow}Mapper.deleteByKey(${entity.primarykey.name});
+	}
+	
+	public int deleteInBatch(List<${entity.primarykey.javatype}> ${entity.primarykey.name}s){
+		return ${entity.namelow}Mapper.deleteInBatch(${entity.primarykey.name}s);
+	}
+	
+	public int deleteByCondition(${entity.name} ${entity.namelow}){
+		return ${entity.namelow}Mapper.deleteByCondition(${entity.namelow});
+	}
+	
+	public int updateByKey(${entity.name} ${entity.namelow}){
+		return ${entity.namelow}Mapper.updateByKey(${entity.namelow});
+	}
+
+#if(!${entity.primarykey.auto})
+	public ${entity.primarykey.javatype} getUniqueKey(){
+		return UUID.randomUUID().toString();
+	}
+#end 
+
+}

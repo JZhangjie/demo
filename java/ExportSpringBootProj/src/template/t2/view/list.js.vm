@@ -49,7 +49,7 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 	
 	function initEvent(){
 		//行内工具条的事件监听
-		table.on('tool(tableItem)', function(obj) { //
+		table.on('tool(tableItem)', function(obj) {
 			var data = obj.data;
 			var layEvent = obj.event;
 			switch (layEvent) {
@@ -72,7 +72,7 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
         
 		//按钮事件监听
 		$("#export_btn").click(function(e){
-			store.exportTable(tableobj.config.id);
+			exportTable(tableobj.config.id);
 		});
 		
 		$("#search_btn").click(function(e){
@@ -92,9 +92,17 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 		$("#moreSearch_btn").click(function(e){
 			var item={};
 #foreach ($field in $conditionFields)
-#if($field.operatetype=='string' || $field.operatetype=='text')
+#if($field.operatetype=='string' || $field.operatetype=='text' || $field.operatetype=='number'|| $field.operatetype=='select')
 			if($("#${field.name}").val()){
 				item.${field.name} = $("#${field.name}").val();
+			}
+#end
+#if($field.operatetype=='date' || $field.operatetype=='time')
+			if($("#start_${field.name}").val()){
+				item.start_${field.name} = $("#start_${field.name}").val();
+			}
+			if($("#end_${field.name}").val()){
+				item.end_${field.name} = $("#end_${field.name}").val();
 			}
 #end
 #end
@@ -103,7 +111,7 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 		
 		$("#moreSearch_clear_btn").click(function(e){
 #foreach ($field in $conditionFields)
-#if($field.operatetype=='string' || $field.operatetype=='text')
+#if($field.operatetype=='string' || $field.operatetype=='text' || $field.operatetype=='number'|| $field.operatetype=='select')
 			$("#${field.name}").val("");
 #end
 #if($field.operatetype=='date' || $field.operatetype=='time')
@@ -131,7 +139,7 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 		  content: '是否删除?'
 		  ,btn: ['删除', '取消']
 		  ,yes: function(index, layero){
-				store.deleteItems(items,function(d){
+				store.post(store.urls.delete,items,function(d){
 					layer.msg("成功删除了"+d+"条记录。");
 					initData();
 				});
@@ -148,7 +156,7 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 
 	function initTable(url,item) {
 		var search_ipt = $("#search_ipt").val();
-		var where={searchstr:search_ipt?search_ipt.trim():"",sort:'gid'};
+		var where={searchstr:search_ipt?search_ipt.trim():"",sort:'${entity.primarykey.name}'};
 		var cols =[{
 					type: 'checkbox',
 					fixed: 'left'
@@ -175,7 +183,6 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 				fixed: 'right',
 				title: '操作',
 				toolbar: '#lineBar',
-				width: 250
 			});
 		}
 		tableobj = table.render({
@@ -189,12 +196,29 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 				pageName: 'pageNum',
 				limitName: 'pageSize'
 			},
-         data:[{name:'111'},{name:'222'},{name:'333'}],
          parseData:function(res){
             return res;
          },
 			cols: [cols],
 			page: true
 		});
+	}
+	
+    function exportTable(tableconfigid){
+		layer.load("导出中...");
+		$.ajax({
+			type: "post",
+			url: store.urls.findall,
+			contentType:'application/json',
+			dataType:'json',
+			data:"",
+			success: function (data) {
+				table.exportFile(tableconfigid,data,'xls');
+				layer.closeAll();
+			},
+			error: function (error) {
+				layer.closeAll();
+			}
+		})
 	}
 });

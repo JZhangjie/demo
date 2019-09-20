@@ -10,48 +10,25 @@
   <dburl>jdbc:postgresql://127.0.0.1:5432/wfjsjg</dburl>
   <dbusername>postgres</dbusername>
   <dbpassword>123456</dbpassword>
-  <tablefilter>^f_</tablefilter>
-  <tables>f_stage</tables>
+  <tablefilter></tablefilter>
+  <tables>f_case_ssj,f_case_xc</tables>
   <ignoretables></ignoretables>
   <entities>
     <entity>
-      <table>f_stage</table>
-      <operate>table,form</operate>
+      <table>f_case_ssj</table>
       <primarykey>
 	      <name>gid</name>
           <auto>true</auto>
       </primarykey>
       <fields>
       	<field>
-          <name>name</name>
-          <search>true</search>
-          <operate>form,table,condition</operate>    <!-- form,table,condition-->
-          <operatetype>string</operatetype> <!-- text date time string number select  date,time在condition条件查询中需要分成起始时间和终止时间-->
-          <label>名字</label>
-        </field>
-        <field>
-          <name>xydm</name>
-          <search>true</search>
-          <operate>form,table,condition</operate>		<!-- form,table -->
-          <operatetype>text</operatetype> <!-- text date time string number -->
-          <label>备注</label>
-        </field>
-        <field>
-          <name>cctime</name>
-          <search>true</search>
-          <operate>form,table,condition</operate>
-          <operatetype>time</operatetype> <!-- text date time string number -->
-          <label>采集时间</label>
-        </field>
+      		<name>geom</name>
+        	<nameupper>Geom</nameupper>
+        	<dbtype>VARCHAR</dbtype>
+        	<javatype>String</javatype>
+      	</field>
       </fields>
       <functions>
-      	<function>
-      		<name>findStageList</name>
-      		<paramtype>HashMap&lt;String,Object&gt;</paramtype>
-      		<dbparamtype>java.util.HashMap</dbparamtype>
-      		<paramname>item</paramname>
-      		<result>List&lt;HashMap&lt;String,Object&gt;&gt;</result>
-      	</function>
       </functions>
     </entity>
   </entities>

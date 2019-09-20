@@ -1,0 +1,17 @@
+<con:config xmlns:con="http://www.example.org/config">
+  <!--2 or more repetitions:-->
+  <con:vmconfig>
+    <con:vmpath>string</con:vmpath>
+    <con:outpath>string</con:outpath>
+    <con:outname>string</con:outname>
+    <con:type>string</con:type>
+    <con:isdir>false</con:isdir>
+  </con:vmconfig>
+  <con:vmconfig>
+    <con:vmpath>string</con:vmpath>
+    <con:outpath>string</con:outpath>
+    <con:outname>string</con:outname>
+    <con:type>string</con:type>
+    <con:isdir>true</con:isdir>
+  </con:vmconfig>
+</con:config>

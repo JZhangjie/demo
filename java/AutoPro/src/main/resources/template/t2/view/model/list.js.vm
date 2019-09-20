@@ -1,0 +1,224 @@
+layui.use(['table','layer','laydate','laytpl','form'], function() {
+	var table = layui.table;
+	var layer = layui.layer;
+	var laydate = layui.laydate;
+	var laytpl  = layui.laytpl;
+	var form = layui.form;
+	var status = parseInt(getQueryVariable("status"));
+	
+	var tableobj;
+   
+	//返回表格中的选中数据
+	window.getSelectedItems = function () {
+	     var checkStatus = table.checkStatus('tableItem'), checkData = checkStatus.data; //得到选中的数据
+	     return checkData;
+	 }
+	 
+	initView();
+	initEvent()
+	
+	function initView(){
+			//时间控件初始化
+#foreach ($field in $entity.conditionFields)
+#if($field.operatetype=='date')
+		laydate.render({
+			elem: '#start_${field.name}',
+			type:'date'
+		  });
+		laydate.render({
+			elem: '#end_${field.name}',
+			type:'date'
+		  });
+#end
+#if($field.operatetype=='time')
+		laydate.render({
+			elem: '#start_${field.name}',
+			type:'datetime'
+		  });
+		laydate.render({
+			elem: '#end_${field.name}',
+			type:'datetime'
+		  });
+#end
+#end
+		  initData();
+		  if(status==0){
+			  $("#work-panel").hide();
+		  }
+	}
+	
+	function initEvent(){
+		//行内工具条的事件监听
+		table.on('tool(tableItem)', function(obj) {
+			var data = obj.data;
+			var layEvent = obj.event;
+			switch (layEvent) {
+				case 'edit':
+					window.location="detail.html?status=2&id="+data.${entity.primarykey.name};
+					break;
+				case 'show':
+					window.location="detail.html?status=0&id="+data.${entity.primarykey.name};
+					break;
+			};
+		});
+		
+		//输入框事件
+		$('#search_ipt').on('keydown', function (event) {
+            if (event.keyCode == 13) {
+                initData();
+                return false
+            }
+        });
+        
+		//按钮事件监听
+		$("#export_btn").click(function(e){
+			exportTable(tableobj.config.id);
+		});
+		
+		$("#search_btn").click(function(e){
+			initData();
+		});
+      
+		$("#add_btn").click(function(e){
+			window.location="detail.html?status=1";
+		});
+		
+		$("#del_btn").click(function(e){
+			      var checkStatus = table.checkStatus('tableItem')
+				  ,data = checkStatus.data;
+				  onDeleteClick(data);
+		});
+		
+		$("#moreSearch_btn").click(function(e){
+			var item={};
+#foreach ($field in $entity.conditionFields)
+#if($field.operatetype=='string' || $field.operatetype=='text' || $field.operatetype=='number'|| $field.operatetype=='select')
+			if($("#${field.name}").val()){
+				item.${field.name} = $("#${field.name}").val();
+			}
+#end
+#if($field.operatetype=='date' || $field.operatetype=='time')
+			if($("#start_${field.name}").val()){
+				item.start_${field.name} = $("#start_${field.name}").val();
+			}
+			if($("#end_${field.name}").val()){
+				item.end_${field.name} = $("#end_${field.name}").val();
+			}
+#end
+#end
+			initData(store.urls.${entity.namelow}.findByCondition,item);
+		});
+		
+		$("#moreSearch_clear_btn").click(function(e){
+#foreach ($field in $entity.conditionFields)
+#if($field.operatetype=='string' || $field.operatetype=='text' || $field.operatetype=='number'|| $field.operatetype=='select')
+			$("#${field.name}").val("");
+#end
+#if($field.operatetype=='date' || $field.operatetype=='time')
+			$("#start_${field.name}").val("");
+			$("#end_${field.name}").val("");
+#end
+#end
+			initData();
+		});
+		
+		$("#moreSearch_toggle_btn").click(function(e){
+			onMoreSearch();
+		});
+	}
+	
+	function onMoreSearch(){
+		$("#moreSearch_form").toggle();
+	}
+	
+	function onDeleteClick(items){
+		if(!items || items.length<=0){
+			return;
+		}
+		layer.open({
+		  content: '是否删除?'
+		  ,btn: ['删除', '取消']
+		  ,yes: function(index, layero){
+				store.post(store.urls.${entity.namelow}.delete,items,function(d){
+					layer.msg("成功删除了"+d+"条记录。");
+					initData();
+				});
+		  },
+		  btn2: function(index, layero){
+			  layer.close(index);
+		  }
+		});
+	}
+  
+   function initData(url,item) {
+      initTable(url,item);
+   }
+
+	function initTable(url,item) {
+		var search_ipt = $("#search_ipt").val();
+		var where={searchstr:search_ipt?search_ipt.trim():"",sort:'${entity.primarykey.name}'};
+		var cols =[{
+					type: 'checkbox',
+					fixed: 'left'
+				}, {
+					title: '序号',
+					type:'numbers',
+					width: 100,
+					align:'center',
+					sort: true,
+				}
+#foreach ($field in $entity.tableFields)
+				,{
+					field: '${field.name}',
+					title: '${field.label}',
+					align:'center'
+				}
+#end 			
+				];
+		
+
+		if(status!=0){
+			cols.push({
+				field:'state',
+				fixed: 'right',
+				title: '操作',
+				toolbar: '#lineBar',
+			});
+		}
+		tableobj = table.render({
+			elem: '#tableItem',
+			url: url?url:store.urls.${entity.namelow}.findlist,
+			method: 'post',
+			title: '列表',
+			where: item?item:where,
+			contentType: 'application/json',
+			request: {
+				pageName: 'pageNum',
+				limitName: 'pageSize'
+			},
+         parseData:function(res){
+            return res;
+         },
+			cols: [cols],
+			page: true
+		});
+	}
+	
+    function exportTable(tableconfigid){
+		layer.load("导出中...");
+		$.ajax({
+			type: "post",
+			url: store.urls.${entity.namelow}.findall,
+			contentType:'application/json',
+			dataType:'json',
+			data:"",
+			success: function (data) {
+				table.exportFile(tableconfigid,data,'xls');
+				layer.closeAll();
+			},
+			error: function (error) {
+				layer.closeAll();
+			}
+		})
+	}
+});

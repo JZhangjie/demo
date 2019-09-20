@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.example.org/config"
+	targetNamespace="http://www.example.org/config"
+	elementFormDefault="qualified">
+    <xs:complexType name="VmConfig">
+        <xs:sequence maxOccurs="1" minOccurs="1">
+            <xs:element name="vmpath" type="xs:string" />
+            <xs:element name="outpath" type="xs:string"/>
+            <xs:element name="outname" type="xs:string"/>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="isdir" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Config">
+        <xs:sequence maxOccurs="1" minOccurs="1">
+            <xs:element name="vmconfig" type="tns:VmConfig" maxOccurs="unbounded" minOccurs="2" />
+        </xs:sequence>
+    </xs:complexType>
+
+	<xs:element name="config" type="tns:Config" />
+</xs:schema>
