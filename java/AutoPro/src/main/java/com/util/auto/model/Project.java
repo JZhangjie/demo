@@ -43,6 +43,8 @@ public class Project {
     @XmlElement(name="entity")
     protected List<Entity> entities;
     protected List<Entity> apiEntities;
+    @XmlElement(name="defaultEntity")
+    protected Entity defaultEntity;
 
     public String getProjectpath() {
         return projectpath;
@@ -200,9 +202,21 @@ public class Project {
         this.apiEntities = apiEntities;
     }
 
+    public Entity getDefaultEntity() {
+        return defaultEntity;
+    }
+
+    public void setDefaultEntity(Entity defaultEntity) {
+        this.defaultEntity = defaultEntity;
+    }
+
     public boolean buildEntity(){
         this.apiEntities = new ArrayList<>();
         for (Entity entity : this.getEntities()) {
+            if(entity.getDefaultField() == null){
+                entity.setDefaultField(this.getDefaultEntity().getDefaultField());
+                entity.getPrimarykey().setAuto(this.getDefaultEntity().getPrimarykey().getAuto());
+            }
             entity.buildFields();
             if(entity.isOutapi()){
                 this.apiEntities.add(entity);

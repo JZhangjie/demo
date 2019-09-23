@@ -37,9 +37,10 @@ layui.use(['table','layer','laydate'], function() {
 	
 	function initEvent(){
 		$("#back_btn").click(function(e){
+		    history.back();
 		});
 		$("#save_btn").click(function(e){
-         saveItem(getForm(currentItem));
+         	saveItem(getForm(currentItem));
 		});
 	}
 	

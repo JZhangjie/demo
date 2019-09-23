@@ -30,6 +30,8 @@ public class Entity {
     protected String operate;
     @XmlElement(name = "outapi")
     protected boolean outapi=true;
+    @XmlElement(name = "defaultField")
+    protected Field defaultField;
 
     public List<Function> getFunctions() {
         return functions;
@@ -149,6 +151,14 @@ public class Entity {
 
     public void setOutapi(boolean outapi) {
         this.outapi = outapi;
+    }
+
+    public Field getDefaultField() {
+        return defaultField;
+    }
+
+    public void setDefaultField(Field defaultField) {
+        this.defaultField = defaultField;
     }
 
     @Override

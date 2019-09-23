@@ -106,7 +106,7 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 			}
 #end
 #end
-			initData(store.urls.${entity.namelow}.findByCondition,item);
+			initData(null,item);
 		});
 		
 		$("#moreSearch_clear_btn").click(function(e){
@@ -175,7 +175,6 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 				}
 #end 			
 				];
-		
 
 		if(status!=0){
 			cols.push({
@@ -187,7 +186,7 @@ layui.use(['table','layer','laydate','laytpl','form'], function() {
 		}
 		tableobj = table.render({
 			elem: '#tableItem',
-			url: url?url:store.urls.${entity.namelow}.findlist,
+			url: url?url:store.urls.${entity.namelow}.findByConditionPage,
 			method: 'post',
 			title: '列表',
 			where: item?item:where,

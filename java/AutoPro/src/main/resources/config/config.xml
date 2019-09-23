@@ -12,7 +12,7 @@
 		<vmconfig>
 			<vmpath>project</vmpath>
 			<isdir>true</isdir>
-			<outfile>{project.projectpath}/project/src/{vm.path}/{vm.name}</outfile>
+			<outfile>{project.projectpath}/project/{vm.path}/{vm.name}</outfile>
 			<type>project</type>
 		</vmconfig>
 		<vmconfig>
